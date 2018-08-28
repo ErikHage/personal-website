@@ -1,9 +1,8 @@
 #app {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #4d4d4d;
-  min-width: 550px;
-  max-width: 850px;
-  margin: 0 auto;
+  margin: auto;
+  height: 100%;
 }
 
 a.active {
@@ -12,4 +11,22 @@ a.active {
 
 nav {
   padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#erik-carousel {
+  /*TODO*/
+}
+
+#page-footer {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 20px;
+  text-align: center;
+  width: inherit;
+}
+
+.slide-wrapper {
+  width: 100%;
+
 }
