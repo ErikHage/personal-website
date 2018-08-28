@@ -22,6 +22,7 @@
     "mocha": true
   },
   "rules": {
+    "comma-dangle": 0,
     "quotes": 0,
     "no-console": 1,
     "no-debugger": 1,
@@ -59,7 +60,7 @@
     "react/no-set-state": 0,
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
-    "react/prop-types": 1,
+//    "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
