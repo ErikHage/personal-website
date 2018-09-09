@@ -11,6 +11,7 @@ a.active {
 nav {
   padding-top: 20px;
   padding-bottom: 20px;
+  bottom: 0;
 }
 
 #page-footer {
@@ -59,4 +60,8 @@ html, body, #app, .app-wrapper {
 
 .slide-arrow.left {
   left: 1rem;
+}
+
+.slide-title {
+  text-align: center;
 }
