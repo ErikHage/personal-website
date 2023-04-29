@@ -4,12 +4,12 @@ const data: WorkData = {
   companyName: 'Credit Suisse',
   jobTitles: [
     {
-      title: 'Software Engineer II',
-      tenure: 'May 2013 - January 2015',
-    },
-    {
       title: 'Software Engineer III',
       tenure: 'January 2015 - October 2017',
+    },
+    {
+      title: 'Software Engineer II',
+      tenure: 'May 2013 - January 2015',
     },
   ],
   summary: 'Developed and maintained Java web services and C# desktop applications for persisting OTC derivative trades to multiple data stores, and conditionally triggering downstream events',

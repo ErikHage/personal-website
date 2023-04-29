@@ -1,5 +1,8 @@
 import creditSuisse from './jobs/credit-suisse';
+import automaticDataProcessing from './jobs/automatic-data-processing';
+import automatedMiningOperationsSoftware from './jobs/automated-mining-operations-software';
 import redWhiteAndBrew from './gigs/red-white-and-brew';
+import cannonballCompany from './gigs/cannonball-company';
 
 interface ProfessionalExperienceData {
   jobData: WorkData[],
@@ -26,10 +29,13 @@ export interface Project {
 
 const data: ProfessionalExperienceData = {
   jobData: [
+    automatedMiningOperationsSoftware,
+    automaticDataProcessing,
     creditSuisse,
   ],
   consultingData: [
     redWhiteAndBrew,
+    cannonballCompany,
   ],
 };
 

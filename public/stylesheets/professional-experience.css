@@ -1,0 +1,32 @@
+.section-header {
+  margin-bottom: 15px;
+}
+
+.work-card {
+  margin-bottom: 15px;
+}
+
+.job-title {
+  font-weight: bold;
+}
+
+.job-tenure {
+  font-style: italic;
+}
+
+.company-name {
+  /*font-weight: bold;*/
+  padding-bottom: 10px;
+}
+
+.job-summary {
+  margin-bottom: 15px;
+}
+
+.project-summary {
+
+}
+
+.skills-used {
+
+}
