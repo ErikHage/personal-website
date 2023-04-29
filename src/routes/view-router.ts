@@ -2,6 +2,7 @@ import Router, { Express, Request, Response } from 'express';
 import path from 'path';
 
 import constants from '../helpers/constants';
+import professionalExperience from '../data/professional-experience';
 
 interface NavOptions {
   professionalExperienceClasses: string,
@@ -38,6 +39,7 @@ const buildViewRouter = (appRoot: string): Express => {
         ...defaultNavOptions,
         professionalExperienceClasses: 'active',
       },
+      professionalExperience,
     });
   });
 

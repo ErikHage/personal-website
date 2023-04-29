@@ -10,6 +10,7 @@
 <body>
 <%- include('./partials/_nav'); %>
 <div class="container-fluid">
+
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center">
@@ -17,14 +18,73 @@
         </div>
         <div class="col-sm-2"></div>
     </div>
+
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-4">
+        <div class="col-sm-8">
+            <h4>Full Time Jobs</h4>
+            <% professionalExperience.jobData.forEach((workData, i) => { %>
+                <% workData.jobTitles.forEach((jobTitle) => { %>
+                    <p><%= jobTitle.title %> | <%= jobTitle.tenure %></p>
+                <% }); %>
+                <p><%= workData.companyName %></p>
+                <p><%= workData.summary %></p>
+
+                <% const accordionId = `jobAccordion${i}` %>
+
+                <p>Projects</p>
+                <div id="<%= accordionId %>">
+                    <% workData.projects.forEach((project, j) => { %>
+                        <% const collapseId = `jobCollapse${i}${j}` %>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="btn" data-bs-toggle="collapse" href="#<%= collapseId %>"><%= project.title %></a>
+                            </div>
+                            <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
+                                <p><%= project.summary %></p>
+                                <p>Skills Used: <%= project.skillsUsed %></p>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% }); %>
         </div>
         <div class="col-sm-2"></div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h4>Consulting Gigs / Side Work</h4>
+            <% professionalExperience.consultingData.forEach((workData, i) => { %>
+                <% workData.jobTitles.forEach((jobTitle) => { %>
+                    <p><%= jobTitle.title %> | <%= jobTitle.tenure %></p>
+                <% }); %>
+                <p><%= workData.companyName %></p>
+                <p><%= workData.summary %></p>
+
+                <% const accordionId = `gigAccordion${i}` %>
+
+                <p>Projects</p>
+                <div id="<%= accordionId %>">
+                    <% workData.projects.forEach((project, j) => { %>
+                        <% const collapseId = `gigCollapse${i}${j}` %>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="btn" data-bs-toggle="collapse" href="#<%= collapseId %>"><%= project.title %></a>
+                            </div>
+                            <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
+                                <p><%= project.summary %></p>
+                                <p>Skills Used: <%= project.skillsUsed %></p>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% }); %>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
     <%- include('./partials/_footer'); %>
 </div>
 </body>
