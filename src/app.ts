@@ -2,7 +2,7 @@ import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
 
-import buildRouter from './routes';
+import buildViewRouter from './routes/view-router';
 
 const getApp = (appRoot: string, port: string): Express => {
   dotenv.config();
@@ -14,7 +14,7 @@ const getApp = (appRoot: string, port: string): Express => {
   app.use(express.urlencoded({ extended: false, }));
   app.use(express.static(path.join(appRoot, '../../public')));
 
-  app.use('/', buildRouter(appRoot));
+  app.use('/', buildViewRouter(appRoot));
 
   return app;
 }

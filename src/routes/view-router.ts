@@ -1,17 +1,23 @@
 import Router, { Express, Request, Response } from 'express';
 import path from 'path';
 
-import constants from './helpers/constants';
+import constants from '../helpers/constants';
+
+interface NavOptions {
+  professionalExperienceClasses: string,
+  personalProjectsClasses: string,
+  rwabClasses: string,
+}
 
 const router: Express = Router();
 
-const defaultNavOptions = {
+const defaultNavOptions: NavOptions = {
   professionalExperienceClasses: '',
   personalProjectsClasses: '',
   rwabClasses: '',
 };
 
-const buildRouter = (appRoot: string): Express => {
+const buildViewRouter = (appRoot: string): Express => {
   router.set('view engine', 'ejs');
   router.set('views', path.join(appRoot, '../templates'));
 
@@ -58,4 +64,4 @@ const buildRouter = (appRoot: string): Express => {
   return router;
 };
 
-export default buildRouter;
+export default buildViewRouter;
