@@ -53,7 +53,9 @@
                                     <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
                                         <div class="card-body">
                                         <div class="project-summary"><span><%= project.summary %></span></div>
-                                        <div class="skills-used">Skills Used: <%= project.skillsUsed.join(", ") %></div>
+                                        <% project.skillsUsed.forEach((skill) => { %>
+                                            <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
+                                        <% }); %>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +100,9 @@
                                     <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
                                         <div class="card-body">
                                             <div class="project-summary"><span><%= project.summary %></span></div>
-                                            <div class="skills-used">Skills Used: <%= project.skillsUsed.join(", ") %></div>
+                                            <% project.skillsUsed.forEach((skill) => { %>
+                                                <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
+                                            <% }); %>
                                         </div>
                                     </div>
                                 </div>
