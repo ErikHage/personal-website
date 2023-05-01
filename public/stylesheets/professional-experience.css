@@ -18,6 +18,11 @@
   padding-bottom: 10px;
 }
 
+.company-logo {
+  width: 100%;
+  padding-bottom: 15px;
+}
+
 .job-summary {
   margin-bottom: 15px;
 }

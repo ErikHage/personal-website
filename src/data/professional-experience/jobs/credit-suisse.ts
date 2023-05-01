@@ -2,6 +2,7 @@ import { WorkData } from '../index';
 
 const data: WorkData = {
   companyName: 'Credit Suisse',
+  companyLogo: '/images/logos/credit_suisse_logo.png',
   jobTitles: [
     {
       title: 'Software Engineer III',

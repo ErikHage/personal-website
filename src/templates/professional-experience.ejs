@@ -39,7 +39,16 @@
                         <% }); %>
                     </div>
                     <div class="card-body">
-                        <div class="job-summary"><span><%= workData.summary %></span></div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <% if (workData.companyLogo) { %>
+                                    <img class="img company-logo" src="<%= workData.companyLogo %>" alt="Company Logo">
+                                <% } %>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="job-summary"><span><%- workData.summary %></span></div>
+                            </div>
+                        </div>
 
                         <% const accordionId = `jobAccordion${i}` %>
 
@@ -52,7 +61,7 @@
                                     </div>
                                     <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
                                         <div class="card-body">
-                                        <div class="project-summary"><span><%= project.summary %></span></div>
+                                        <div class="project-summary"><span><%- project.summary %></span></div>
                                         <% project.skillsUsed.forEach((skill) => { %>
                                             <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
                                         <% }); %>
@@ -86,7 +95,16 @@
                         <% }); %>
                     </div>
                     <div class="card-body">
-                        <div class="job-summary"><span><%= workData.summary %></span></div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <% if (workData.companyLogo) { %>
+                                    <img class="img company-logo" src="<%= workData.companyLogo %>" alt="Company Logo">
+                                <% } %>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="job-summary"><span><%- workData.summary %></span></div>
+                            </div>
+                        </div>
 
                         <% const accordionId = `gigAccordion${i}` %>
 

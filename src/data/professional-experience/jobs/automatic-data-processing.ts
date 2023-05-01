@@ -2,6 +2,7 @@ import { WorkData } from '../index';
 
 const data: WorkData = {
   companyName: 'Automatic Data Processing',
+  companyLogo: '/images/logos/adp_logo.png',
   jobTitles: [
     {
       title: 'Senior Software Engineer',

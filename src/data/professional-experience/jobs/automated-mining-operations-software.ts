@@ -2,6 +2,7 @@ import { WorkData } from '../index';
 
 const data: WorkData = {
   companyName: 'Automated Mining Operations Software',
+  companyLogo: '/images/logos/amos_logo.jpg',
   jobTitles: [
     {
       title: 'Founding Engineer',

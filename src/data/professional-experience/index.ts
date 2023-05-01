@@ -11,6 +11,7 @@ interface ProfessionalExperienceData {
 
 export interface WorkData {
   companyName: string,
+  companyLogo? : string,
   jobTitles: JobTitle[],
   summary: string,
   projects: Project[],

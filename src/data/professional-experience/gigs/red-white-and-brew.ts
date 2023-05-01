@@ -2,6 +2,7 @@ import { WorkData } from '../index';
 
 const data: WorkData = {
   companyName: 'Red White & Brew Beer Company',
+  companyLogo: '/images/logos/rwab_logo.jpeg',
   jobTitles: [
     {
       title: 'Software Engineer',
