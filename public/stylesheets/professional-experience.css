@@ -20,7 +20,13 @@
 
 .company-logo {
   width: 100%;
+  max-width: 75px;
   padding-bottom: 15px;
+}
+
+.company-logo-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
 .job-summary {
