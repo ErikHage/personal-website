@@ -3,6 +3,7 @@ import path from 'path';
 
 import constants from '../helpers/constants';
 import professionalExperience from '../data/professional-experience';
+import personalProjects from '../data/personal-projects';
 import skillColorMap from '../helpers/skill-color-map';
 
 interface NavOptions {
@@ -52,6 +53,8 @@ const buildViewRouter = (appRoot: string): Express => {
         ...defaultNavOptions,
         personalProjectsClasses: 'active',
       },
+      personalProjects,
+      skillColorMap,
     });
   });
 

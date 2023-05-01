@@ -27,6 +27,7 @@ const skillColorMap = {
   'Bootstrap': blue,
   'JQuery': blue,
   'React': blue,
+  'Redux': blue,
   'Express': blue,
 
   // Database
