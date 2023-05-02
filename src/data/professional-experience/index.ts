@@ -4,6 +4,7 @@ import automatedMiningOperationsSoftware from './jobs/automated-mining-operation
 import redWhiteAndBrew from './gigs/red-white-and-brew';
 import cannonballCompany from './gigs/cannonball-company';
 import theCollegeOfNewJersey from './jobs/the-college-of-new-jersey';
+import berkeleySweetShops from './jobs/berkeley-sweet-shops';
 
 interface ProfessionalExperienceData {
   jobData: WorkData[],
@@ -35,6 +36,7 @@ const data: ProfessionalExperienceData = {
     automaticDataProcessing,
     creditSuisse,
     theCollegeOfNewJersey,
+    berkeleySweetShops,
   ],
   consultingData: [
     redWhiteAndBrew,
