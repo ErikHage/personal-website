@@ -31,12 +31,11 @@
                             <div class="card-header">
                                 <div>
                                     <span class="project-name"><%= project.projectName %></span>
-                                    <% if (project.link) { %>
-                                        <a class="btn btn-sm btn-primary" href="<%= project.link %>" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                    <% } %>
-                                    <% if (project.link) { %>
-                                        <a class="btn btn-sm btn-secondary" href="<%= project.githubLink %>" target="_blank"><i class="fa-brands fa-github"></i></a>
-                                    <% } %>
+                                    <% project.iconLinks.forEach((iconLink) => { %>
+                                        <a class="<%= iconLink.buttonClasses %>" href="<%= iconLink.link %>"
+                                           target="_blank" data-bs-toggle="tooltip" data-bs-placement="top"
+                                           title="<%= iconLink.tooltip %>"><i class="<%= iconLink.fontAwesomeClasses %>"></i></a>
+                                    <% }); %>
                                 </div>
                             </div>
                             <div class="card-body">
