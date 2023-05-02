@@ -7,6 +7,7 @@ import personalProjects from '../data/personal-projects';
 import skillColorMap from '../helpers/skill-color-map';
 
 interface NavOptions {
+  aboutMeClasses: string,
   professionalExperienceClasses: string,
   personalProjectsClasses: string,
   rwabClasses: string,
@@ -15,6 +16,7 @@ interface NavOptions {
 const router: Express = Router();
 
 const defaultNavOptions: NavOptions = {
+  aboutMeClasses: '',
   professionalExperienceClasses: '',
   personalProjectsClasses: '',
   rwabClasses: '',
@@ -30,6 +32,16 @@ const buildViewRouter = (appRoot: string): Express => {
       urls: constants.urls,
       nav: {
         ...defaultNavOptions,
+      },
+    });
+  });
+
+  router.get('/about-me', (request: Request, response: Response) => {
+    response.render('about-me', {
+      urls: constants.urls,
+      nav: {
+        ...defaultNavOptions,
+        aboutMeClasses: 'active',
       },
     });
   });
