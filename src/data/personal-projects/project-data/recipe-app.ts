@@ -18,10 +18,9 @@ const data: Project = {
       tooltip: 'See Code',
     },
   ],
-  // link: 'http://theferalrooster.com/recipes/',
-  // githubLink: 'https://github.com/ErikHage/recipe-ui',
   images: [
     '/images/project-screenshots/recipe-app/index.png',
+    '/images/logos/amos_logo.jpg',
   ],
 };
 
