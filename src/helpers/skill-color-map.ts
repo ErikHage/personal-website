@@ -51,6 +51,7 @@ const skillColorMap = {
 
   // Other
   'Circuits': gray,
+  'Electronics': gray,
   'Medical Devices': gray,
   'Statics': gray,
 };

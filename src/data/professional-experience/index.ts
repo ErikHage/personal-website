@@ -3,8 +3,10 @@ import automaticDataProcessing from './jobs/automatic-data-processing';
 import automatedMiningOperationsSoftware from './jobs/automated-mining-operations-software';
 import redWhiteAndBrew from './gigs/red-white-and-brew';
 import cannonballCompany from './gigs/cannonball-company';
-import theCollegeOfNewJersey from './jobs/the-college-of-new-jersey';
+import theCollegeOfNewJerseyAdjunct from './jobs/the-college-of-new-jersey-adjunct';
 import berkeleySweetShops from './jobs/berkeley-sweet-shops';
+import friendlys from './jobs/friendlys';
+import theCollegeOfNewJerseyResearcher from './jobs/the-college-of-new-jersey-researcher';
 
 interface ProfessionalExperienceData {
   jobData: WorkData[],
@@ -35,7 +37,9 @@ const data: ProfessionalExperienceData = {
     automatedMiningOperationsSoftware,
     automaticDataProcessing,
     creditSuisse,
-    theCollegeOfNewJersey,
+    theCollegeOfNewJerseyAdjunct,
+    theCollegeOfNewJerseyResearcher,
+    friendlys,
     berkeleySweetShops,
   ],
   consultingData: [
