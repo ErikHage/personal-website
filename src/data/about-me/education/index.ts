@@ -4,6 +4,7 @@ import theCollegeOfNewJersey from './the-college-of-new-jersey';
 
 export interface EducationData {
   schoolName: string,
+  schoolLogo: string,
   degree: string,
   completionDate: string,
   accolades?: string,

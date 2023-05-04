@@ -20,8 +20,8 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <div class="col-xs-0 col-sm-2"></div>
+        <div class="col-xs-12 col-sm-8">
             <div class="card about-me-card">
                 <div class="card-header">
                     <div class="me-photo-wrapper text-center">
@@ -38,44 +38,53 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-xs-0 col-sm-2"></div>
     </div>
 
     <div class="row">
-        <div class="col-sm-2"></div>
+        <div class="col-xs-0 col-sm-2"></div>
 
-        <div class="col-sm-8">
+        <div class="col-xs-12 col-sm-8">
             <div class="section-title text-center">
                 <h3>Education</h3>
             </div>
 
             <div class="row">
                 <% educationData.forEach((education) => { %>
-                    <div class="col-xs-12">
+                    <div class="col-12">
                         <div class="card education-card">
                             <div class="card-header">
                                 <div class="row">
-                                    <div class="col text-start">
-                                        <div class="education-school">
-                                            <span><%= education.schoolName %></span>
-                                        </div>
-                                        <div class="education-degree">
-                                            <span><%= education.degree %></span>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-2 text-start">
+                                                <div class="school-logo-wrapper text-center">
+                                                    <img class="img school-logo" src="<%= education.schoolLogo %>" alt="School Logo">
+                                                </div>
+                                            </div>
+                                            <div class="col-10 text-start">
+                                                <div class="education-school">
+                                                    <span><%= education.schoolName %></span>
+                                                </div>
+                                                <div class="education-degree">
+                                                    <span><%= education.degree %></span>
+                                                </div>
+                                                <% if (education.accolades) { %>
+                                                    <div class="education-accolades">
+                                                        <span><%= education.accolades %></span>
+                                                    </div>
+                                                <% } %>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col text-end">
+                                    <div class="col-6 text-end">
                                         <span class="education-date"><%= education.completionDate %></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <% if (education.accolades) { %>
-                                    <div class="education-accolades">
-                                        <span><%= education.accolades %></span>
-                                    </div>
-                                <% } %>
                                 <div class="education-description">
-                                    <span><%= education.description %></span>
+                                    <span><%- education.description %></span>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +94,41 @@
 
         </div>
 
-        <div class="col-sm-2"></div>
+        <div class="col-xs-0 col-sm-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-0 col-sm-2"></div>
+
+        <div class="col-xs-12 col-sm-8">
+            <div class="section-title text-center">
+                <h3>Achievements</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <% achievements.forEach((achievement) => { %>
+                                <div class="achievement-wrapper">
+                                    <div class="achievement-name">
+                                        <span><%= achievement.name %></span>
+                                    </div>
+                                    <% if (achievement.description) { %>
+                                        <div class="achievement-description">
+                                            <span><%- achievement.description %></span>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xs-0 col-sm-2"></div>
     </div>
     <%- include('./partials/_footer'); %>
 </div>

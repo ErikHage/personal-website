@@ -14,6 +14,17 @@
   margin-bottom: 20px;
 }
 
+.school-logo {
+  width: 100%;
+  max-width: 75px;
+  padding-bottom: 15px;
+}
+
+.school-logo-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
 .education-school {
   font-weight: bold;
 }
@@ -32,4 +43,16 @@
 
 .education-description {
 
+}
+
+.achievement-wrapper {
+  padding-bottom: 20px;
+}
+
+.achievement-name {
+  font-weight: bold;
+}
+
+.achievement-description {
+  padding-left: 30px;
 }
