@@ -22,104 +22,70 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
+            <div class="card about-me-card">
+                <div class="card-header">
+                    <div class="me-photo-wrapper text-center">
+                        <img class="me-photo" src="/images/erik.jpg" alt="Photo of Erik">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span>I'm an independent self-starter with expertise in Java, NodeJS, Golang, and Dart who has a proven track
+                        record of completing high priority projects accurately and efficiently.
+                        I am adept at time management and experienced with large scale projects in a global agile team environment.
+                        I'm always looking for new ways in which to expand and enhance my skill set and to have the
+                        opportunity to work on new and challenging projects.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+
+        <div class="col-sm-8">
             <div class="section-title text-center">
                 <h3>Education</h3>
             </div>
 
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="card education-card">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col text-start">
-                                    <div class="education-school">
-                                        <span>FDM Academy</span>
+                <% educationData.forEach((education) => { %>
+                    <div class="col-xs-12">
+                        <div class="card education-card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col text-start">
+                                        <div class="education-school">
+                                            <span><%= education.schoolName %></span>
+                                        </div>
+                                        <div class="education-degree">
+                                            <span><%= education.degree %></span>
+                                        </div>
                                     </div>
-                                    <div class="education-degree">
-                                        <span>Java Developer Training</span>
+                                    <div class="col text-end">
+                                        <span class="education-date"><%= education.completionDate %></span>
                                     </div>
-                                </div>
-                                <div class="col text-end">
-                                    <span class="education-date">May 2013</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body">
-                             <div class="education-description">
-                                <span>Intensive four-month training program covering shell scripting, sql, and java development.</span>
+                            <div class="card-body">
+                                <% if (education.accolades) { %>
+                                    <div class="education-accolades">
+                                        <span><%= education.accolades %></span>
+                                    </div>
+                                <% } %>
+                                <div class="education-description">
+                                    <span><%= education.description %></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="card education-card">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col text-start">
-                                    <div class="education-school">
-                                        <span>Boston University</span>
-                                    </div>
-                                    <div class="education-degree">
-                                        <span>Master of Engineering in Biomedical Engineering</span>
-                                    </div>
-                                </div>
-                                <div class="col text-end">
-                                    <span class="education-date">January 2011</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="education-description">
-                                <span>description here</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12">
-                    <div class="card education-card">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col text-start">
-                                    <div class="education-school">
-                                        <span>The College of New Jersey</span>
-                                    </div>
-                                    <div class="education-degree">
-                                        <span>Bachelor of Science in Biomedical Engineering</span>
-                                    </div>
-                                </div>
-                                <div class="col text-end">
-                                    <span class="education-date">May 2009</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="education-accolades">
-                                <span>Cum Laude, Dean’s List</span>
-                            </div>
-                            <div class="education-description">
-                                <span>description here</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <% }); %>
             </div>
 
-<!--            Boston University-->
-<!--            Master of Engineering in Biomedical Engineering-->
-<!--            The College of New Jersey-->
-<!--            Bachelor of Science in Biomedical Engineering-->
-<!--            Cum Laude, Dean’s List-->
-
-
         </div>
+
         <div class="col-sm-2"></div>
-    </div>
-    <div class="row">
-        <div class="col-sm-4 col-lg-5"></div>
-        <div class="col-sm-4 col-lg-2"></div>
-        <div class="col-sm-4 col-lg-5"></div>
     </div>
     <%- include('./partials/_footer'); %>
 </div>

@@ -1,3 +1,15 @@
+.about-me-card {
+  margin-bottom: 20px;
+}
+
+.me-photo-wrapper {
+  width: 100%;
+}
+
+.me-photo {
+  width: 25%;
+}
+
 .education-card {
   margin-bottom: 20px;
 }
