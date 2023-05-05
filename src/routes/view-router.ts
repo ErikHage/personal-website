@@ -8,6 +8,7 @@ import skillColorMap from '../helpers/skill-color-map';
 import educationData from '../data/about-me/education';
 import achievements from '../data/about-me/achievements';
 import hobbies from '../data/about-me/hobbies';
+import rwabData from '../data/red-white-and-brew';
 
 interface NavOptions {
   aboutMeClasses: string,
@@ -83,6 +84,7 @@ const buildViewRouter = (appRoot: string): Express => {
         ...defaultNavOptions,
         rwabClasses: 'active',
       },
+      rwabData,
     });
   });
 
