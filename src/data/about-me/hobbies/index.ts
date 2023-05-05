@@ -2,7 +2,7 @@ import homebrewing from './hobby-data/homebrewing';
 import videoGames from './hobby-data/video-games';
 import cooking from './hobby-data/cooking';
 import woodWorking from './hobby-data/wood-working';
-import gardening from './hobby-data/gardening';
+// import gardening from './hobby-data/gardening';
 import chickens from './hobby-data/chickens';
 
 interface HobbyLink {
@@ -27,7 +27,7 @@ const data: Hobby[] = [
   videoGames,
   cooking,
   woodWorking,
-  gardening,
+  // gardening,
   chickens,
 ];
 

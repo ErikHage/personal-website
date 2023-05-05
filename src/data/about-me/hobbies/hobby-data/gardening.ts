@@ -4,12 +4,7 @@ const data: Hobby = {
   name: 'Gardening',
   description: 'TODO',
   links: [],
-  images: [
-    // {
-    //   imagePath: '',
-    //   caption: '',
-    // },
-  ],
+  images: [],
 };
 
 export default data;
