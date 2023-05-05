@@ -1,14 +1,14 @@
 import { Hobby } from '../index';
 
 const data: Hobby = {
-  name: '',
-  description: '',
+  name: 'Cooking',
+  description: 'TODO',
   links: [],
   images: [
-    {
-      imagePath: '',
-      caption: '',
-    },
+    // {
+    //   imagePath: '',
+    //   caption: '',
+    // },
   ],
 };
 
