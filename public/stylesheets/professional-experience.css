@@ -1,3 +1,15 @@
+.page-title {
+  margin-top: 10px;
+}
+
+#fullTime {
+  scroll-margin-top: 130px;
+}
+
+#gigs {
+  scroll-margin-top: 130px;
+}
+
 .work-card {
   margin-bottom: 15px;
 }
