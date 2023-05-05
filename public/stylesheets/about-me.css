@@ -1,3 +1,24 @@
+.page-title {
+  margin-top: 10px;
+}
+
+#summaryHeader {
+  font-weight: bold;
+}
+
+#education {
+  scroll-margin-top: 130px;
+}
+
+#achievements {
+  scroll-margin-top: 130px;
+}
+
+#hobbies {
+  scroll-margin-top: 130px;
+  margin-top: 10px;
+}
+
 .about-me-card {
   margin-bottom: 20px;
 }
@@ -55,4 +76,20 @@
 
 .achievement-description {
   padding-left: 30px;
+}
+
+.hobby-card {
+  margin-bottom: 15px;
+}
+
+.hobby-name {
+  font-weight: bold;
+}
+
+.hobby-description {
+  margin-bottom: 15px;
+}
+
+.modal-title {
+  font-weight: bold;
 }

@@ -7,6 +7,7 @@ import personalProjects from '../data/personal-projects';
 import skillColorMap from '../helpers/skill-color-map';
 import educationData from '../data/about-me/education';
 import achievements from '../data/about-me/achievements';
+import hobbies from '../data/about-me/hobbies';
 
 interface NavOptions {
   aboutMeClasses: string,
@@ -45,8 +46,9 @@ const buildViewRouter = (appRoot: string): Express => {
         ...defaultNavOptions,
         aboutMeClasses: 'active',
       },
-      achievements,
       educationData,
+      achievements,
+      hobbies,
     });
   });
 
