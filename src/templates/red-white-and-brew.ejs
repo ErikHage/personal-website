@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/stylesheets/main.css">
     <link rel="stylesheet" href="/stylesheets/red-white-and-brew.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>Erik Hage: RW&B</title>
 </head>
 <body>
@@ -25,8 +27,8 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-1 col-lg-2"></div>
-        <div class="col-xs-10 col-lg-8">
+        <div class="col-xs-2 col-lg-2"></div>
+        <div class="col-xs-8 col-lg-8">
             <div class="card">
                 <div class="card-header">
                     <p>The Red White and Brew Beer Company was founded in 2016 with the goal of providing the
@@ -39,10 +41,45 @@
         <div class="col-xs-1 col-lg-2"></div>
     </div>
 
+    <hr />
+
     <div class="row">
-        <% rwabData.images.forEach((image) => { %>
-            <img src="<%= image.imagePath %>" alt="<%= image.caption %>">
-        <% }); %>
+<!--        <div class="col-xs-0 col-lg-4"></div>-->
+        <div class="col">
+            <div id="rwbCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <% rwabData.images.forEach((image, i) => {
+                        const indicatorClasses = i === 0 ? 'active' : '';
+                    %>
+                        <button type="button" class="<%= indicatorClasses %>" data-bs-target="#rwbCarousel" data-bs-slide-to="<%= i %>"></button>
+                    <% }); %>
+                </div>
+
+                <!-- The content -->
+                <div class="carousel-inner">
+                    <% rwabData.images.forEach((image, i) => {
+                        const contentClasses = i === 0 ? 'carousel-item img-fluid active' : 'carousel-item img-fluid';
+                    %>
+                        <div class="<%= contentClasses %>">
+                            <img src="<%= image.imagePath %>" alt="<%= image.caption %>" class="d-block w-100">
+                            <div class="carousel-caption">
+                                <p><%= image.caption %></p>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#rwbCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#rwbCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+<!--        <div class="col-xs-2 col-lg-4"></div>-->
     </div>
 
     <%- include('./partials/_footer'); %>
