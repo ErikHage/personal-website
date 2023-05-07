@@ -44,15 +44,16 @@
     <hr />
 
     <div class="row">
-<!--        <div class="col-xs-0 col-lg-4"></div>-->
-        <div class="col">
+        <div class="col-xs-0 col-lg-4"></div>
+        <div class="col-xs-12 col-lg-4">
             <div id="rwbCarousel" class="carousel slide" data-bs-ride="carousel">
                 <!-- Indicators/dots -->
                 <div class="carousel-indicators">
                     <% rwabData.images.forEach((image, i) => {
                         const indicatorClasses = i === 0 ? 'active' : '';
                     %>
-                        <button type="button" class="<%= indicatorClasses %>" data-bs-target="#rwbCarousel" data-bs-slide-to="<%= i %>"></button>
+                        <button type="button" class="<%= indicatorClasses %>" data-bs-target="#rwbCarousel"
+                                data-bs-slide-to="<%= i %>"></button>
                     <% }); %>
                 </div>
 
@@ -79,7 +80,7 @@
                 </button>
             </div>
         </div>
-<!--        <div class="col-xs-2 col-lg-4"></div>-->
+        <div class="col-xs-2 col-lg-4"></div>
     </div>
 
     <%- include('./partials/_footer'); %>
