@@ -4,7 +4,7 @@ services:
     restart: always
     image: ehage/personal-website:latest
     ports:
-      - "3000:8001"
+      - "33556:8001"
     environment:
       - PORT=8001
-    container_name: rwbbc-website
+    container_name: personal-website
