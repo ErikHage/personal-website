@@ -9,7 +9,12 @@ export interface Project {
   summary: string,
   skillsUsed: string[],
   iconLinks: IconLink[],
-  images: string[],
+  images: ImageWithCaption[],
+}
+
+export interface ImageWithCaption {
+  imagePath: string,
+  caption: string,
 }
 
 export interface IconLink {

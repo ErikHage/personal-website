@@ -1,0 +1,10 @@
+version: '3'
+services:
+  personal-website:
+    restart: always
+    image: ehage/personal-website:${PERSONAL_WEBSITE_VERSION}
+    ports:
+      - "3000:8001"
+    environment:
+      - PORT=8001
+    container_name: rwbbc-website

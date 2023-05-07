@@ -55,7 +55,7 @@
                                             <% project.images.forEach((image) => { %>
                                                 <div class="col-4">
                                                     <a href="#" class="d-block mb-4 h-100" data-bs-toggle="modal" data-bs-target="#imageModal">
-                                                        <img class="img-fluid img-thumbnail" src="<%= image %>" alt="">
+                                                        <img class="img-fluid img-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
                                                     </a>
                                                 </div>
                                             <% }); %>
@@ -75,7 +75,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Image Preview</h4>
+                    <span id="modelCurrentCaption" class="modal-title">Image Preview</span>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body text-center">

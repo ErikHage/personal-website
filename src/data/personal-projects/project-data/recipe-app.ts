@@ -19,8 +19,10 @@ const data: Project = {
     },
   ],
   images: [
-    '/images/project-screenshots/recipe-app/index.png',
-    '/images/logos/amos_logo.jpg',
+    {
+      imagePath: '/images/project-screenshots/recipe-app/index.png',
+      caption: 'Screenshot',
+    },
   ],
 };
 
