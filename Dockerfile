@@ -31,8 +31,8 @@ ENV HOME=/srv/package
 WORKDIR ${HOME}
 
 COPY --from=buildStage ${HOME}/node_modules ./node_modules
+COPY --from=buildStage ${HOME}/dist ./dist
 COPY package.json ./package.json
-COPY dist ./dist
 COPY public ./public
 
 RUN ls -la
