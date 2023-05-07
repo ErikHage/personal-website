@@ -2,7 +2,7 @@ version: '3'
 services:
   personal-website:
     restart: always
-    image: ehage/personal-website:${PERSONAL_WEBSITE_VERSION}
+    image: ehage/personal-website:latest
     ports:
       - "3000:8001"
     environment:
