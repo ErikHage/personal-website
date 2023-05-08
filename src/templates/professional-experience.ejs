@@ -23,131 +23,133 @@
     </ul>
 </nav>
 
-<div class="container-fluid scroll-spy-area" data-bs-spy="scroll" data-bs-target="#pageNavbar" data-bs-offset="10"">
+<div class="container-fluid scroll-spy-area" data-bs-spy="scroll" data-bs-target="#pageNavbar" data-bs-offset="10">
     <div class="page-title text-center">
         <h2>Professional Experience</h2>
     </div>
 
-    <div id="fullTime" class="row">
-        <div class="col-xs-0 col-md-2"></div>
-        <div class="col-xs-0 col-md-8">
+    <div class="row">
+        <div class="col-xs-0 col-md-1 col-lg-2"></div>
+        <div class="col-xs-12 col-md-10 col-lg-8">
 
-            <div class="section-title text-center">
-                <h3>Full Time Jobs</h3>
-            </div>
+            <div id="fullTime" class="row">
+                <div class="section-title text-center">
+                    <h3>Full Time Jobs</h3>
+                </div>
 
-            <% professionalExperience.jobData.forEach((workData, i) => { %>
-                <div class="card work-card">
-                    <div class="card-header">
-                        <div><span class="company-name"><%= workData.companyName %></span></div>
-                        <% workData.jobTitles.forEach((jobTitle) => { %>
-                            <div class="row">
-                                <div class="col text-start"><span class="job-title"><%= jobTitle.title %></span></div>
-                                <div class="col text-end"><span class="job-tenure"><%= jobTitle.tenure %></span></div>
-                            </div>
-                        <% }); %>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-2">
-                                <% if (workData.companyLogo) { %>
-                                    <div class="company-logo-wrapper text-center">
-                                        <img class="img company-logo" src="<%= workData.companyLogo %>" alt="Company Logo">
+                <% professionalExperience.jobData.forEach((workData, i) => { %>
+                    <div class="col-12">
+                        <div class="card work-card">
+                            <div class="card-header">
+                                <div><span class="company-name"><%= workData.companyName %></span></div>
+                                <% workData.jobTitles.forEach((jobTitle) => { %>
+                                    <div class="row">
+                                        <div class="col text-start"><span class="job-title"><%= jobTitle.title %></span></div>
+                                        <div class="col text-end"><span class="job-tenure"><%= jobTitle.tenure %></span></div>
                                     </div>
-                                <% } %>
+                                <% }); %>
                             </div>
-                            <div class="col-xs-12 col-md-10">
-                                <div class="job-summary"><span><%- workData.summary %></span></div>
-                            </div>
-                        </div>
-
-                        <% const accordionId = `jobAccordion${i}` %>
-
-                        <div id="<%= accordionId %>">
-                            <% workData.projects.forEach((project, j) => { %>
-                                <% const collapseId = `jobCollapse${i}${j}` %>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="btn" data-bs-toggle="collapse" href="#<%= collapseId %>"><%= project.title %></a>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-2">
+                                        <% if (workData.companyLogo) { %>
+                                            <div class="company-logo-wrapper text-center">
+                                                <img class="img company-logo" src="<%= workData.companyLogo %>" alt="Company Logo">
+                                            </div>
+                                        <% } %>
                                     </div>
-                                    <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
-                                        <div class="card-body">
-                                        <div class="project-summary"><span><%- project.summary %></span></div>
-                                        <% project.skillsUsed.forEach((skill) => { %>
-                                            <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
-                                        <% }); %>
-                                        </div>
+                                    <div class="col-xs-12 col-md-10">
+                                        <div class="job-summary"><span><%- workData.summary %></span></div>
                                     </div>
                                 </div>
-                            <% }); %>
+
+                                <% const accordionId = `jobAccordion${i}` %>
+
+                                <div id="<%= accordionId %>">
+                                    <% workData.projects.forEach((project, j) => { %>
+                                        <% const collapseId = `jobCollapse${i}${j}` %>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a class="btn" data-bs-toggle="collapse" href="#<%= collapseId %>"><%= project.title %></a>
+                                            </div>
+                                            <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
+                                                <div class="card-body">
+                                                    <div class="project-summary"><span><%- project.summary %></span></div>
+                                                    <% project.skillsUsed.forEach((skill) => { %>
+                                                        <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
+                                                    <% }); %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% }); %>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <% }); %>
-        </div>
-        <div class="col-xs-0 col-md-2"></div>
-    </div>
-
-    <br />
-
-    <div id="gigs" class="row">
-        <div class="col-xs-0 col-md-2"></div>
-        <div class="col-xs-0 col-md-8">
-
-            <div class="section-title text-center">
-                <h3>Consulting Gigs / Side Work</h3>
+                <% }); %>`
             </div>
 
-            <% professionalExperience.consultingData.forEach((workData, i) => { %>
-                <div class="card work-card">
-                    <div class="card-header">
-                        <div><span class="company-name"><%= workData.companyName %></span></div>
-                        <% workData.jobTitles.forEach((jobTitle) => { %>
-                            <div class="row">
-                                <div class="col text-start"><span class="job-title"><%= jobTitle.title %></span></div>
-                                <div class="col text-end"><span class="job-tenure"><%= jobTitle.tenure %></span></div>
-                            </div>
-                        <% }); %>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-2">
-                                <% if (workData.companyLogo) { %>
-                                    <div class="company-logo-wrapper text-center">
-                                        <img class="img company-logo" src="<%= workData.companyLogo %>" alt="Company Logo">
-                                    </div>
-                                <% } %>
-                            </div>
-                            <div class="col-xs-12 col-md-10">
-                                <div class="job-summary"><span><%- workData.summary %></span></div>
-                            </div>
-                        </div>
+            <br />
 
-                        <% const accordionId = `gigAccordion${i}` %>
+            <div id="gigs" class="row">
+                <div class="section-title text-center">
+                    <h3>Consulting Gigs / Side Work</h3>
+                </div>
 
-                        <div id="<%= accordionId %>">
-                            <% workData.projects.forEach((project, j) => { %>
-                                <% const collapseId = `gigCollapse${i}${j}` %>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="btn" data-bs-toggle="collapse" href="#<%= collapseId %>"><%= project.title %></a>
+                <% professionalExperience.consultingData.forEach((workData, i) => { %>
+                    <div class="col-12">
+                        <div class="card work-card">
+                            <div class="card-header">
+                                <div><span class="company-name"><%= workData.companyName %></span></div>
+                                <% workData.jobTitles.forEach((jobTitle) => { %>
+                                    <div class="row">
+                                        <div class="col text-start"><span class="job-title"><%= jobTitle.title %></span></div>
+                                        <div class="col text-end"><span class="job-tenure"><%= jobTitle.tenure %></span></div>
                                     </div>
-                                    <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
-                                        <div class="card-body">
-                                            <div class="project-summary"><span><%= project.summary %></span></div>
-                                            <% project.skillsUsed.forEach((skill) => { %>
-                                                <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
-                                            <% }); %>
-                                        </div>
+                                <% }); %>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-2">
+                                        <% if (workData.companyLogo) { %>
+                                            <div class="company-logo-wrapper text-center">
+                                                <img class="img company-logo" src="<%= workData.companyLogo %>" alt="Company Logo">
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                    <div class="col-xs-12 col-md-10">
+                                        <div class="job-summary"><span><%- workData.summary %></span></div>
                                     </div>
                                 </div>
-                            <% }); %>
+
+                                <% const accordionId = `gigAccordion${i}` %>
+
+                                <div id="<%= accordionId %>">
+                                    <% workData.projects.forEach((project, j) => { %>
+                                        <% const collapseId = `gigCollapse${i}${j}` %>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a class="btn" data-bs-toggle="collapse" href="#<%= collapseId %>"><%= project.title %></a>
+                                            </div>
+                                            <div id="<%= collapseId %>" class="collapse" data-bs-parent="#<%= accordionId %>">
+                                                <div class="card-body">
+                                                    <div class="project-summary"><span><%= project.summary %></span></div>
+                                                    <% project.skillsUsed.forEach((skill) => { %>
+                                                        <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
+                                                    <% }); %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% }); %>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <% }); %>
+                <% }); %>
+            </div>
+
         </div>
-        <div class="col-xs-0 col-md-8">
+        <div class="col-xs-0 col-md-1 col-lg-2"></div>
     </div>
 
     <%- include('./partials/_footer'); %>
