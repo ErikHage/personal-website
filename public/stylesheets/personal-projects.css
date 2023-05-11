@@ -1,5 +1,9 @@
-.project-card {
+.bottom-margin-15 {
   margin-bottom: 15px;
+}
+
+.project-card {
+  height: 100%;
 }
 
 .project-name {

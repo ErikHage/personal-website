@@ -1,8 +1,8 @@
 import { WorkData } from '../index';
 
 const data: WorkData = {
-  companyName: 'Automatic Data Processing',
-  companyLogo: '/images/logos/adp_logo.png',
+  companyName: 'Automatic Data Processing / Lifion',
+  companyLogo: '/images/logos/lifion_logo.png',
   jobTitles: [
     {
       title: 'Senior Software Engineer',
@@ -13,7 +13,8 @@ const data: WorkData = {
       tenure: 'October 2017 - September 2019',
     },
   ],
-  summary: 'As a member of the Identity Management team, I was responsible for security of user accounts, authentication, federation, and session resolution for a large metadata driven human resources platform.',
+  summary: 'As a member of the Lifion Identity Management team, I was responsible for security of user accounts, ' +
+    'authentication, federation, and session resolution for a large metadata driven human resources platform.',
   projects: [
     {
       title: 'Impersonation',

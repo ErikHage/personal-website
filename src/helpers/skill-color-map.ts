@@ -12,6 +12,7 @@ const skillColorMap = {
   'Java': red,
   'C#': red,
   'NodeJS': red,
+  'Typescript': red,
   'MATLAB': red,
   'C++': red,
 
@@ -21,7 +22,6 @@ const skillColorMap = {
   'XML': yellow,
 
   // frameworks / abstractions
-  'Typescript': blue,
   'Spring Framework': blue,
   'Spring Boot': blue,
   'Flutter': blue,
@@ -32,6 +32,8 @@ const skillColorMap = {
   'React': blue,
   'Redux': blue,
   'Express': blue,
+  'JUnit': blue,
+  'Maven': blue,
 
   // Database
   'Oracle DB': green,

@@ -1,4 +1,7 @@
 import recipeApp from './project-data/recipe-app';
+import personalWebsite from './project-data/personal-website';
+import javaUtility from './project-data/java-utility';
+import javaRulesEngine from './project-data/java-rules-engine';
 
 interface PersonalProjects {
   projects: Project[],
@@ -27,6 +30,9 @@ export interface IconLink {
 const data: PersonalProjects = {
   projects: [
     recipeApp,
+    personalWebsite,
+    javaUtility,
+    javaRulesEngine,
   ],
 };
 
