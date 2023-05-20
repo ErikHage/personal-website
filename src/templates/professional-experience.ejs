@@ -30,8 +30,8 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-0 col-md-1 col-lg-2"></div>
-        <div class="col-xs-12 col-md-10 col-lg-8">
+        <div class="col-0 col-md-1 col-lg-2"></div>
+        <div class="col-12 col-md-10 col-lg-8">
 
             <div id="fullTime" class="row">
                 <div class="section-title text-center">
@@ -52,14 +52,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-2">
+                                    <div class="col-12 col-md-2">
                                         <% if (workData.companyLogo) { %>
                                             <div class="company-logo-wrapper text-center">
                                                 <img class="img company-logo" src="<%= workData.companyLogo %>" alt="Company Logo">
                                             </div>
                                         <% } %>
                                     </div>
-                                    <div class="col-xs-12 col-md-10">
+                                    <div class="col-12 col-md-10">
                                         <div class="job-summary"><span><%- workData.summary %></span></div>
                                     </div>
                                 </div>
@@ -111,14 +111,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-2">
+                                    <div class="col-12 col-md-2">
                                         <% if (workData.companyLogo) { %>
                                             <div class="company-logo-wrapper text-center">
                                                 <img class="img company-logo" src="<%= workData.companyLogo %>" alt="Company Logo">
                                             </div>
                                         <% } %>
                                     </div>
-                                    <div class="col-xs-12 col-md-10">
+                                    <div class="col-12 col-md-10">
                                         <div class="job-summary"><span><%- workData.summary %></span></div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
             </div>
 
         </div>
-        <div class="col-xs-0 col-md-1 col-lg-2"></div>
+        <div class="col-0 col-md-1 col-lg-2"></div>
     </div>
 
     <%- include('./partials/_footer'); %>
