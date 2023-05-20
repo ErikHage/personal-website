@@ -6,7 +6,7 @@ const data: Project = {
   skillsUsed: [ 'Java', 'JUnit', 'Maven', ],
   iconLinks: [
     {
-      link: 'https://github.com/ErikHage/JavaUtility',
+      link: 'https://github.com/ErikHage/java-utility',
       buttonClasses: '', // 'btn btn-sm btn-secondary',
       fontAwesomeClasses: 'fa-brands fa-github fa-lg',
       tooltip: 'See Code',
