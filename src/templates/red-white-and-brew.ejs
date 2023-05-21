@@ -29,8 +29,8 @@
     </div>
 
     <div class="row">
-        <div class="col-2 col-lg-2"></div>
-        <div class="col-8 col-lg-8">
+        <div class="col-0 col-lg-2"></div>
+        <div class="col-12 col-lg-8">
             <div class="card">
                 <div class="card-header">
                     <p>The Red White and Brew Beer Company was founded in 2016 with the goal of providing the
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-1 col-lg-2"></div>
+        <div class="col-0 col-lg-2"></div>
     </div>
 
     <hr />
@@ -66,8 +66,8 @@
                     %>
                         <div class="<%= contentClasses %>">
                             <img src="<%= image.imagePath %>" alt="<%= image.caption %>" class="d-block w-100">
-                            <div class="carousel-caption">
-                                <p><%= image.caption %></p>
+                            <div class="carousel-caption-wrapper">
+                                <p class="carousel-caption"><%= image.caption %></p>
                             </div>
                         </div>
                     <% }); %>

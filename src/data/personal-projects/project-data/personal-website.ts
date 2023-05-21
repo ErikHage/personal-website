@@ -3,7 +3,7 @@ import { Project } from '../index';
 const data: Project = {
   projectName: 'Personal (This) Website',
   summary: 'My personal website, written with NodeJS and Typescript, using EJS templates to generate pages.',
-  skillsUsed: [ 'Typescript', 'NodeJS', 'JQuery', 'Bootstrap', 'Docker', 'Nginx', ],
+  skillsUsed: [ 'Typescript', 'NodeJS', 'EJS', 'HTML', 'CSS', 'Bootstrap', 'Docker', 'Nginx', ],
   iconLinks: [
     {
       link: 'https://github.com/ErikHage/personal-website',

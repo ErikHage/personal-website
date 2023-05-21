@@ -18,8 +18,11 @@ const skillColorMap = {
 
   // markup
   'HTML5': yellow,
+  'HTML': yellow,
   'CSS3': yellow,
+  'CSS': yellow,
   'XML': yellow,
+  'EJS': yellow,
 
   // frameworks / abstractions
   'Spring Framework': blue,
