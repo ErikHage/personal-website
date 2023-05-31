@@ -10,7 +10,7 @@ const data: WorkData = {
     },
   ],
   summary: 'Writing lesson plans, preparing presentations, designing examinations and projects, lecturing, and evaluating student work. ' +
-    'Taught a freshman level design lab and multiple sophomore level statics courses.',
+    'Taught freshman level design lab (ENG142) and sophomore level statics (ENG222).',
   projects: [
     {
       title: 'Freshman Intro Lab - Pulse Detector Circuit',

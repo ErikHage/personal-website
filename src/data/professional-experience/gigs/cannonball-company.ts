@@ -13,7 +13,8 @@ const data: WorkData = {
   projects: [
     {
       title: 'Habitat Tracker',
-      summary: 'App tracks bird harvests by location, date, and group size, and allows flexible querying of stored data to generate real-time reports for earnings distribution to land owners.',
+      summary: 'App tracks bird harvests by location, date, and group size, and allows flexible querying of stored ' +
+        'data to generate real-time reports for earnings distribution to land owners.',
       skillsUsed: [ 'C#', 'SQLite', ],
     },
   ],
