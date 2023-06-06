@@ -1,11 +1,26 @@
-$(document).ready(function() {
-  const currentModelCaption = $('#modelCurrentCaption');
-  const currentModalImage = $('#modalCurrentImage');
+function ready(callback) {
+  if (document.readyState !== 'loading') {
+    callback();
+  } else {
+    document.addEventListener('DOMContentLoaded', callback);
+  }
+}
 
-  $('.img-thumbnail').click(function() {
-    const clickedImage = $(this);
+ready(function() {
+  const thumbnails = document.querySelectorAll('.img-thumbnail');
 
-    currentModalImage.attr('src', clickedImage.attr('src'));
-    currentModelCaption.html(clickedImage.attr('alt'));
-  });
+  for (let i = 0; i < thumbnails.length; i++) {
+    const thumbnail = thumbnails[i];
+
+    thumbnail.addEventListener('click', () => {
+      const currentModelCaption = document.getElementById("modelCurrentCaption");
+      const currentModalImage = document.getElementById("modalCurrentImage");
+
+      const caption = thumbnail.getAttribute("alt");
+      const image = thumbnail.getAttribute("src");
+
+      currentModelCaption.innerHTML = caption;
+      currentModalImage.setAttribute("src", image);
+    });
+  }
 });
