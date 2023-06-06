@@ -3,8 +3,7 @@ FROM node:18-alpine AS buildStage
 ENV TERM=xterm \
     HOME=/srv/package
 
-RUN apk update \
-    && apk add nano
+RUN apk update
 
 WORKDIR ${HOME}
 
@@ -28,14 +27,15 @@ LABEL "Description" = "Personal Website"
 
 ENV HOME=/srv/package
 
+RUN apk update \
+    && apk add nano
+
 WORKDIR ${HOME}
 
 COPY --from=buildStage ${HOME}/node_modules ./node_modules
 COPY --from=buildStage ${HOME}/dist ./dist
 COPY package.json ./package.json
 COPY public ./public
-
-RUN ls -la
 
 EXPOSE 3000
 
