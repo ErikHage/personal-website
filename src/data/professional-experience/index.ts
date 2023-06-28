@@ -7,6 +7,7 @@ import theCollegeOfNewJerseyAdjunct from './jobs/the-college-of-new-jersey-adjun
 import berkeleySweetShops from './jobs/berkeley-sweet-shops';
 import friendlys from './jobs/friendlys';
 import theCollegeOfNewJerseyResearcher from './jobs/the-college-of-new-jersey-researcher';
+import lmaxGroup from './jobs/lmax-group';
 
 interface ProfessionalExperienceData {
   jobData: WorkData[],
@@ -34,6 +35,7 @@ export interface Project {
 
 const data: ProfessionalExperienceData = {
   jobData: [
+    lmaxGroup,
     automatedMiningOperationsSoftware,
     automaticDataProcessing,
     creditSuisse,
