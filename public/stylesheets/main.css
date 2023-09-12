@@ -23,3 +23,7 @@ html {
 .scroll-spy-area {
   position: relative;
 }
+
+.navbar-nav > li > .dropdown-menu {
+  background-color: #212529;
+}
