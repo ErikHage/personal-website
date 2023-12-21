@@ -31,6 +31,11 @@ const data: WorkData = {
         'code changes on the latency.',
       skillsUsed: [ 'VueJS', 'Java', ],
     },
+    {
+      title: 'Cryptocurrency Custodian Portal',
+      summary: '',
+      skillsUsed: [ 'VueJS', 'Java', 'MySQL', 'gRPC', ],
+    },
   ],
 };
 
