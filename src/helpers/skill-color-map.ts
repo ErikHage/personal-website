@@ -38,6 +38,7 @@ const skillColorMap = {
   'VueJS': blue,
   'JUnit': blue,
   'Maven': blue,
+  'gRPC': blue,
 
   // Database
   'Oracle DB': green,
