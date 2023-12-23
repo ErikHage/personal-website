@@ -33,7 +33,7 @@ const data: WorkData = {
     },
     {
       title: 'Cryptocurrency Custodian Portal',
-      summary: '',
+      summary: 'Adding features and expanding testing for LMAX\'s cryptocurrency custodian portal.',
       skillsUsed: [ 'VueJS', 'Java', 'MySQL', 'gRPC', ],
     },
   ],
