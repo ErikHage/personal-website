@@ -2,7 +2,7 @@ import { Project } from '../index';
 
 const data: Project = {
   projectName: 'Java Utility',
-  summary: 'A few Java utilities I wrote as practice or to fill a need in another project.',
+  summary: 'A few Java utilities written as practice or to fill a need in another project.',
   skillsUsed: [ 'Java', 'JUnit', 'Maven', ],
   iconLinks: [
     {
