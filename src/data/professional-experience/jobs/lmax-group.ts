@@ -39,6 +39,12 @@ const data: WorkData = {
         'interface has its own separate api gateway that share a collection of backend services. ',
       skillsUsed: [ 'VueJS', 'Java', 'MySQL', 'gRPC', ],
     },
+    {
+      title: 'WalletConnect',
+      summary: 'WalletConnect is a protocol that enables digital wallets and DApps to connect. Our goal ' +
+        'is to allow holders of Pyth on the LMAX Custodian to vote in governance.',
+      skillsUsed: [ 'VueJS', 'Java', ],
+    },
   ],
 };
 
