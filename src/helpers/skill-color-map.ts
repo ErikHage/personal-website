@@ -10,6 +10,7 @@ const skillColorMap = {
   'Golang': red,
   'Dart': red,
   'Java': red,
+  'Javascript': red,
   'C#': red,
   'NodeJS': red,
   'Typescript': red,
