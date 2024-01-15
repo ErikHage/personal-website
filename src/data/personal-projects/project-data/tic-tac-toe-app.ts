@@ -18,7 +18,12 @@ const data: Project = {
       tooltip: 'See Code',
     },
   ],
-  images: [],
+  images: [
+    {
+      imagePath: '/images/project-screenshots/tic-tac-toe-app/tic-tac-toe-board.jpg',
+      caption: 'Screenshot',
+    },
+  ],
 };
 
 export default data;
