@@ -1,4 +1,5 @@
 import recipeApp from './project-data/recipe-app';
+import ticTacToeApp from './project-data/tic-tac-toe-app';
 import personalWebsite from './project-data/personal-website';
 import javaUtility from './project-data/java-utility';
 import javaRulesEngine from './project-data/java-rules-engine';
@@ -30,6 +31,7 @@ export interface IconLink {
 const data: PersonalProjects = {
   projects: [
     recipeApp,
+    ticTacToeApp,
     personalWebsite,
     javaUtility,
     javaRulesEngine,
