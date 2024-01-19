@@ -21,7 +21,15 @@ const data: Project = {
   images: [
     {
       imagePath: '/images/project-screenshots/tic-tac-toe-app/tic-tac-toe-board.jpg',
-      caption: 'Screenshot',
+      caption: 'First Version',
+    },
+    {
+      imagePath: '/images/project-screenshots/tic-tac-toe-app/game-history.png',
+      caption: 'Second Version',
+    },
+    {
+      imagePath: '/images/project-screenshots/tic-tac-toe-app/mobile-view.png',
+      caption: 'Mobile View',
     },
   ],
 };
