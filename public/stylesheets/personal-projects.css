@@ -17,3 +17,18 @@
 .skills-used {
 
 }
+
+.my-thumbnail-anchor-wrapper {
+  max-height: 105px;
+  max-width: 105px;
+}
+
+.my-thumbnail-anchor {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.my-thumbnail {
+  max-height: 100px;
+  max-width: 100px;
+}

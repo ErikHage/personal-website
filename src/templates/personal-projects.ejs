@@ -51,13 +51,13 @@
                                     <a data-bs-toggle="collapse" data-bs-target="#<%= collapseId %>"><i class="fa-solid fa-camera"></i><i class="fa-solid fa-chevron-down"></i></a>
                                     <div id="<%= collapseId %>" class="collapse">
                                         <hr />
-                                        <div class="row text-center text-lg-start">
+                                        <div class="row text-center text-lg-start thumbnails-row">
                                             <% project.images.forEach((image) => { %>
-                                                <div class="col-6 col-md-4">
-                                                    <a href="#" class="d-block mb-4 h-100" data-bs-toggle="modal" data-bs-target="#imageModal">
-                                                        <img class="img-fluid img-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
-                                                    </a>
-                                                </div>
+                                            <div class="my-thumbnail-anchor-wrapper">
+                                                <a href="#" class="d-block ma-6 h-100 my-thumbnail-anchor" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                                    <img class="img-fluid img-thumbnail my-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
+                                                </a>
+                                            </div>
                                             <% }); %>
                                         </div>
                                     </div>
