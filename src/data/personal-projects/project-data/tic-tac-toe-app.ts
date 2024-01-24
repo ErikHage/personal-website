@@ -31,6 +31,10 @@ const data: Project = {
       imagePath: '/images/project-screenshots/tic-tac-toe-app/mobile-view.png',
       caption: 'Mobile View',
     },
+    {
+      imagePath: '/images/project-screenshots/tic-tac-toe-app/game-history.jpg',
+      caption: 'Game History',
+    },
   ],
 };
 
