@@ -3,3 +3,8 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.intro-paragraph {
+  display: block;
+  font-weight: bold;
+}
