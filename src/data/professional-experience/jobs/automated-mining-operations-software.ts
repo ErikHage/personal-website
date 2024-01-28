@@ -60,9 +60,9 @@ const data: WorkData = {
         'on the device. We have added an method for users to push their device\'s logs to our servers, where we can ' +
         'read them at our leisure. We\'ve also added a way to directly upload the database to our google cloud storage, ' +
         'as those files are too large to do it via api on our backend servers. We use a signed url, which is a ' +
-        'pre-authenticated url generated to upload a file to a specific location in cloud storage. The signed url is sent' +
+        'pre-authenticated url generated to upload a file to a specific location in cloud storage. The signed url is sent ' +
         'to the device, when then uses it to upload the database file.',
-      skillsUsed: [ 'Golang', 'GCP', 'Dart', ],
+      skillsUsed: [ 'Golang', 'GCP', 'Dart', 'Javascript', ],
     },
   ],
 };
