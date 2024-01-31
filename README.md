@@ -1,5 +1,7 @@
 # personal-website
 
+Stuff about me
+
 ### Run locally  
 
 ```bash
