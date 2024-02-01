@@ -1,4 +1,4 @@
-FROM node:18-alpine AS buildStage
+FROM node:20-alpine AS buildStage
 
 ENV TERM=xterm \
     HOME=/srv/package
@@ -20,7 +20,7 @@ COPY .eslintignore ./.eslintignore
 
 RUN npm run build
 
-FROM node:18-alpine
+FROM node:20-alpine
 
 MAINTAINER Erik Hage <ehage4@gmail.com>
 LABEL "Description" = "Personal Website"
