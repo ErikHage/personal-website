@@ -9,7 +9,7 @@ import educationData from '../data/about-me/education';
 import achievements from '../data/about-me/achievements';
 import hobbies from '../data/about-me/hobbies';
 import rwabData from '../data/red-white-and-brew';
-// import bookData from '../data/about-me/reading';
+import bookData from '../data/about-me/reading';
 
 interface NavOptions {
   aboutMeClasses: string,
@@ -89,16 +89,16 @@ const buildViewRouter = (appRoot: string): Express => {
     });
   });
 
-  // router.get('/reading-log', (request: Request, response: Response) => {
-  //   response.render('reading-log', {
-  //     urls: constants.urls,
-  //     nav: {
-  //       ...defaultNavOptions,
-  //       aboutMeClasses: 'active',
-  //     },
-  //     bookData,
-  //   });
-  // });
+  router.get('/reading-log', (request: Request, response: Response) => {
+    response.render('reading-log', {
+      urls: constants.urls,
+      nav: {
+        ...defaultNavOptions,
+        aboutMeClasses: 'active',
+      },
+      bookData,
+    });
+  });
 
   return router;
 };
