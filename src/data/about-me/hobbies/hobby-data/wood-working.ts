@@ -1,4 +1,4 @@
-import { Hobby } from '../index';
+import { Hobby } from '../types';
 
 const data: Hobby = {
   name: 'Wood Working',
