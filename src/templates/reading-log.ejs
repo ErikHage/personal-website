@@ -20,11 +20,17 @@ function formatDate(date) {
     if (date === null || date === undefined) {
       return "";
     }
-    return date.toLocaleDateString({
+    return date.toLocaleDateString('en-us', {
         year:"numeric",
         month:"short",
         day:"numeric"
     });
+}
+function calculateDays(start, finish) {
+    if (finish === null || finish === undefined) {
+      return "";
+    }
+    return Math.round((finish - start) / (1000 * 60 * 60 * 24));
 }
  %>
 
@@ -44,6 +50,7 @@ function formatDate(date) {
                     <td>Title</td>
                     <td>Start</td>
                     <td>Finish</td>
+                    <td>Days</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -52,6 +59,7 @@ function formatDate(date) {
                         <td><%= record.title %></td>
                         <td><%= formatDate(record.start) %></td>
                         <td><%= formatDate(record.finish) %></td>
+                        <td><%= calculateDays(record.start, record.finish) %></td>
                     </tr>
                 <% }) %>
                 </tbody>
