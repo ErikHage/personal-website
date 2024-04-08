@@ -1,5 +1,10 @@
 import { BookRecord, ReadingStat } from './types'
 
+const newStat = (name: string, value: string): ReadingStat => ({
+  name,
+  value,
+});
+
 function countBooksRead(readingLog: BookRecord[]): number {
   return readingLog.filter(
     (record: BookRecord) => record.finish !== undefined
@@ -35,22 +40,10 @@ export function calculateStats(readingLog: BookRecord[]) {
   const startOfLogging: Date = getStartDate(readingLog);
   const numRead: number = countBooksRead(readingLog);
 
-  stats.push({
-    name: 'Currently Reading',
-    value: currentBook?.title ?? '',
-  });
-  stats.push({
-    name: 'Books Read',
-    value: numRead.toString(),
-  });
-  stats.push({
-    name: 'Last Finished',
-    value: lastBook.title,
-  });
-  stats.push({
-    name: 'Books Per Year',
-    value: getBooksPerYear(numRead, startOfLogging).toString(),
-  });
+  stats.push(newStat('Currently Reading', currentBook?.title ?? ''));
+  stats.push(newStat('Books Read', numRead.toString()));
+  stats.push(newStat('Last Finished', lastBook.title));
+  stats.push(newStat('Books Per Year', getBooksPerYear(numRead, startOfLogging).toString()));
 
   return stats;
 }
