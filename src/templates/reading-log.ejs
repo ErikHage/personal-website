@@ -68,12 +68,24 @@ function formatSeries(series, installment) {
                 <tbody>
                 <% bookData.readingLog.forEach(record => { %>
                     <tr>
-                        <td class="text-wrap"><%= record.title %></td>
-                        <td><%= formatSeries(record.series, record.installment) %></td>
-                        <td><%= record.author %></td>
-                        <td><%= formatDate(record.start) %></td>
-                        <td><%= formatDate(record.finish) %></td>
-                        <td><%= calculateDays(record.start, record.finish) %></td>
+                        <td class="text-wrap" style="width: 30%">
+                            <%= record.title %>
+                        </td>
+                        <td class="text-wrap" style="width: 25%">
+                            <%= formatSeries(record.series, record.installment) %>
+                        </td>
+                        <td class="text-wrap" style="width: 20%">
+                            <%= record.author %>
+                        </td>
+                        <td style="width: 10%">
+                            <%= formatDate(record.start) %>
+                        </td>
+                        <td style="width: 10%">
+                            <%= formatDate(record.finish) %>
+                        </td>
+                        <td style="width: 5%">
+                            <%= calculateDays(record.start, record.finish) %>
+                        </td>
                     </tr>
                 <% }) %>
                 </tbody>
