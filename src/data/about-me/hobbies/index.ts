@@ -4,6 +4,7 @@ import cooking from './hobby-data/cooking';
 import woodWorking from './hobby-data/wood-working';
 // import gardening from './hobby-data/gardening';
 import chickens from './hobby-data/chickens';
+import reading from './hobby-data/reading';
 import { Hobby } from './types';
 
 const data: Hobby[] = [
@@ -13,6 +14,7 @@ const data: Hobby[] = [
   woodWorking,
   // gardening,
   chickens,
+  reading,
 ];
 
 export default data;
