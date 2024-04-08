@@ -7,6 +7,12 @@ export interface BookRecord {
   finish?: Date,
 }
 
+export interface ReadingStat {
+  name: string,
+  value: string,
+}
+
 export interface Reading {
   readingLog: BookRecord[],
+  stats: ReadingStat[],
 }
