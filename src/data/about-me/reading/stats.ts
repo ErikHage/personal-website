@@ -17,8 +17,8 @@ function lastBookRead(readingLog: BookRecord[]): BookRecord {
   return readingLog.find((record: BookRecord) => record.finish !== undefined)!;
 }
 
-function getCurrentBook(readingLog: BookRecord[]): BookRecord | undefined {
-  return readingLog.find((record: BookRecord) => record.finish === undefined);
+function getCurrentBooks(readingLog: BookRecord[]): BookRecord[] {
+  return readingLog.filter((record: BookRecord) => record.finish === undefined);
 }
 
 function getStartDate(readingLog: BookRecord[]): Date {
@@ -36,11 +36,11 @@ export function calculateStats(readingLog: BookRecord[]): ReadingStat[] {
   const stats: ReadingStat[] = [];
 
   const lastBook: BookRecord = lastBookRead(readingLog);
-  const currentBook: BookRecord | undefined = getCurrentBook(readingLog);
+  const currentBooks: BookRecord[] = getCurrentBooks(readingLog);
   const startOfLogging: Date = getStartDate(readingLog);
   const numRead: number = countBooksRead(readingLog);
 
-  stats.push(newStat('Currently Reading', currentBook?.title ?? ''));
+  stats.push(newStat('Currently Reading', currentBooks.map(book => book.title).join(', ')));
   stats.push(newStat('Books Read', numRead.toString()));
   stats.push(newStat('Last Finished', lastBook.title));
   stats.push(newStat('Books Per Year', getBooksPerYear(numRead, startOfLogging).toString()));
