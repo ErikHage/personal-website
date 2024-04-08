@@ -12,7 +12,13 @@ export interface ReadingStat {
   value: string,
 }
 
+export interface BooksPerYear {
+  year: string,
+  count: number,
+}
+
 export interface Reading {
   readingLog: BookRecord[],
   stats: ReadingStat[],
+  booksByYear: BooksPerYear[],
 }

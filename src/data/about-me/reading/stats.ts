@@ -1,4 +1,4 @@
-import { BookRecord, ReadingStat } from './types'
+import { BookRecord, BooksPerYear, ReadingStat } from './types'
 
 const newStat = (name: string, value: string): ReadingStat => ({
   name,
@@ -32,7 +32,7 @@ function getBooksPerYear(numRead: number, startDate: Date): number {
   return numRead / totalYears;
 }
 
-export function calculateStats(readingLog: BookRecord[]) {
+export function calculateStats(readingLog: BookRecord[]): ReadingStat[] {
   const stats: ReadingStat[] = [];
 
   const lastBook: BookRecord = lastBookRead(readingLog);
@@ -46,4 +46,34 @@ export function calculateStats(readingLog: BookRecord[]) {
   stats.push(newStat('Books Per Year', getBooksPerYear(numRead, startOfLogging).toString()));
 
   return stats;
+}
+
+export function calculateBooksByYear(readingLog: BookRecord[]): BooksPerYear[] {
+  const counts = new Map<number, number>();
+
+  readingLog.forEach(record => {
+    const year = record.finish?.getFullYear();
+
+    if (year === undefined) {
+      return;
+    }
+
+    if (counts.has(year)) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      counts.set(year, counts.get(year)! + 1);
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      counts.set(year!, 1);
+    }
+  });
+
+  const results: BooksPerYear[] = [];
+  for (const entry of counts.entries()) {
+    results.push({
+      year: entry[0].toString(),
+      count: entry[1],
+    });
+  }
+
+  return results;
 }
