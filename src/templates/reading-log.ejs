@@ -32,16 +32,6 @@ function calculateDays(start, finish) {
     }
     return Math.round((finish - start) / (1000 * 60 * 60 * 24));
 }
-function formatSeries(series, installment) {
-    let result = "";
-    if (series !== null && series !== undefined) {
-        result = result + series;
-    }
-    if (installment !== null && installment !== undefined) {
-        result = result + " #" + installment
-    }
-    return result;
-}
 %>
 
 <%- include('./partials/_nav'); %>
@@ -58,7 +48,8 @@ function formatSeries(series, installment) {
                 <thead>
                 <tr>
                     <th style="width: 30%">Title</th>
-                    <th style="width: 25%">Series</th>
+                    <th style="width: 20%">Series</th>
+                    <th style="width: 5%">#</th>
                     <th style="width: 20%">Author</th>
                     <th style="width: 10%">Start</th>
                     <th style="width: 10%">Finish</th>
@@ -72,7 +63,10 @@ function formatSeries(series, installment) {
                             <%= record.title %>
                         </td>
                         <td class="text-wrap">
-                            <%= formatSeries(record.series, record.installment) %>
+                            <%= record.series %>
+                        </td>
+                        <td>
+                            <%= record.installment %>
                         </td>
                         <td class="text-wrap">
                             <%= record.author %>
