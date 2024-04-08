@@ -8,10 +8,12 @@ const data: Hobby = {
     {
       url: 'https://steamcommunity.com/profiles/76561198002643366/',
       description: 'My Steam account',
+      openInNewTab: true,
     },
     {
       url: 'https://www.pathofexile.com/',
       description: 'Path of Exile is one of my favorite games',
+      openInNewTab: true,
     },
   ],
   images: [],

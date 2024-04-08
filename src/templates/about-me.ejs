@@ -141,7 +141,9 @@
                                 <% if (hobby.links.length > 0) { %>
                                     <% hobby.links.forEach((link) => { %>
                                         <div class="hobby-link">
-                                            <a href="<%= link.url %>" target="_blank"><%= link.description %></a>
+                                            <a href="<%= link.url %>"
+                                               <% if (link.openInNewTab) { %> target="_blank" <% } %>
+                                               ><%= link.description %></a>
                                         </div>
                                     <% }); %>
                                 <% } %>

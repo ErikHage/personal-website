@@ -1,6 +1,7 @@
 export interface HobbyLink {
   url: string,
   description: string,
+  openInNewTab: boolean,
 }
 
 export interface HobbyImage {
