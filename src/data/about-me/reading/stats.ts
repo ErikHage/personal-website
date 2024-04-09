@@ -1,9 +1,19 @@
 import { BookRecord, BooksPerYear, ReadingStat } from './types'
 
+const MILLIS_PER_DAY: number = 1000 * 60 * 60 * 24;
+const MILLIS_PER_YEAR: number = 1000 * 60 * 60 * 24 * 365;
+
 const newStat = (name: string, value: string): ReadingStat => ({
   name,
   value,
 });
+
+function calculateDays(start: Date, finish: Date | undefined): number | undefined {
+  if (finish === undefined) {
+    return undefined;
+  }
+  return ((finish.getTime() - start.getTime()) / MILLIS_PER_DAY) + 1;
+}
 
 function countBooksRead(readingLog: BookRecord[]): number {
   return readingLog.filter(
@@ -12,8 +22,6 @@ function countBooksRead(readingLog: BookRecord[]): number {
 }
 
 function lastBookRead(readingLog: BookRecord[]): BookRecord {
-  // this better not be null, it's ok to shit the bed if it is
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return readingLog.find((record: BookRecord) => record.finish !== undefined)!;
 }
 
@@ -27,9 +35,59 @@ function getStartDate(readingLog: BookRecord[]): Date {
 
 function getBooksPerYear(numRead: number, startDate: Date): number {
   const now: Date = new Date();
-  const totalYears = (now.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365);
+  const totalYears = (now.getTime() - startDate.getTime()) / MILLIS_PER_YEAR;
 
   return numRead / totalYears;
+}
+
+function getFastestAndSlowestRead(readingLog: BookRecord[]): {
+  fastestRead: BookRecord,
+  fastestDays: number,
+  slowestRead: BookRecord,
+  slowestDays: number,
+} {
+  let max = 0;
+  let min = Number.MAX_SAFE_INTEGER;
+  let maxRecord: BookRecord = readingLog[0]!;
+  let minRecord: BookRecord = readingLog[0]!;
+
+  for (let i = 0; i < readingLog.length; i++) {
+    const record = readingLog[i]!;
+    const days: number | undefined = calculateDays(record.start, record.finish)
+
+    if (days === undefined) {
+      continue;
+    }
+
+    if (days > max) {
+      max = days;
+      maxRecord = record;
+    }
+    if (days !== 0 && days < min) {
+      min = days;
+      minRecord = record;
+    }
+  }
+
+  return {
+    fastestRead: minRecord,
+    fastestDays: min,
+    slowestRead: maxRecord,
+    slowestDays: max,
+  };
+}
+
+function bookToString(book: BookRecord): string {
+  let result= book.title;
+
+  if (book.series) {
+    result = `${result}: ${book.series}`;
+    if (book.installment) {
+      result = `${result} #${book.installment}`;
+    }
+  }
+
+  return result;
 }
 
 export function calculateStats(readingLog: BookRecord[]): ReadingStat[] {
@@ -39,11 +97,19 @@ export function calculateStats(readingLog: BookRecord[]): ReadingStat[] {
   const currentBooks: BookRecord[] = getCurrentBooks(readingLog);
   const startOfLogging: Date = getStartDate(readingLog);
   const numRead: number = countBooksRead(readingLog);
+  const {
+    fastestRead,
+    fastestDays,
+    slowestRead,
+    slowestDays,
+  } = getFastestAndSlowestRead(readingLog);
 
-  stats.push(newStat('Currently Reading', currentBooks.map(book => book.title).join(', ')));
+  stats.push(newStat('Currently Reading', currentBooks.map(book => bookToString(book)).join(', ')));
   stats.push(newStat('Books Read', numRead.toString()));
-  stats.push(newStat('Last Finished', lastBook.title));
+  stats.push(newStat('Last Finished', bookToString(lastBook)));
   stats.push(newStat('Books Per Year', getBooksPerYear(numRead, startOfLogging).toString()));
+  stats.push(newStat('Fastest Read', `[${fastestDays} days] ${bookToString(fastestRead)}`));
+  stats.push(newStat('Slowest Read', `[${slowestDays} days] ${bookToString(slowestRead)}`));
 
   return stats;
 }
@@ -59,10 +125,8 @@ export function calculateBooksByYear(readingLog: BookRecord[]): BooksPerYear[] {
     }
 
     if (counts.has(year)) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       counts.set(year, counts.get(year)! + 1);
     } else {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       counts.set(year!, 1);
     }
   });
