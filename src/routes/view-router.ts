@@ -10,6 +10,7 @@ import achievements from '../data/about-me/achievements';
 import hobbies from '../data/about-me/hobbies';
 import rwabData from '../data/red-white-and-brew';
 
+import indexHandlers from '../handlers/index-handlers';
 import readingHandlers from '../handlers/reading-handlers';
 
 const router: Express = Router();
@@ -18,15 +19,7 @@ const buildViewRouter = (appRoot: string): Express => {
   router.set('view engine', 'ejs');
   router.set('views', path.join(appRoot, '../templates'));
 
-  router.get('/', (request: Request, response: Response) => {
-    response.render('index', {
-      // todo data here, maybe random photo or project highlights
-      urls: constants.urls,
-      nav: {
-        ...constants.defaultNavOptions,
-      },
-    });
-  });
+  router.get('/', indexHandlers.getIndex);
 
   router.get('/about-me', (request: Request, response: Response) => {
     response.render('about-me', {
