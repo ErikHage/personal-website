@@ -12,5 +12,5 @@ function getIndex(request: Request, response: Response) {
 }
 
 export default {
-  getIndex,
+  getIndexView: getIndex,
 };

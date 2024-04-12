@@ -25,6 +25,6 @@ function getReadingStats(request: Request, response: Response) {
 }
 
 export default {
-  getReadingLog,
-  getReadingStats,
+  getReadingLogView: getReadingLog,
+  getReadingStatsView: getReadingStats,
 };

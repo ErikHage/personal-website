@@ -1,17 +1,12 @@
-import Router, { Express, Request, Response } from 'express';
+import Router, { Express } from 'express';
 import path from 'path';
-
-import constants from '../helpers/constants';
-import professionalExperience from '../data/professional-experience';
-import personalProjects from '../data/personal-projects';
-import skillColorMap from '../helpers/skill-color-map';
-import educationData from '../data/about-me/education';
-import achievements from '../data/about-me/achievements';
-import hobbies from '../data/about-me/hobbies';
-import rwabData from '../data/red-white-and-brew';
 
 import indexHandlers from '../handlers/index-handlers';
 import readingHandlers from '../handlers/reading-handlers';
+import aboutMeHandlers from '../handlers/about-me-handlers';
+import professionalExperienceHandlers from '../handlers/professional-experience-handlers';
+import personalProjectsHandlers from '../handlers/personal-projects-handlers';
+import redWhiteAndBrewHandlers from '../handlers/red-white-and-brew-handlers';
 
 const router: Express = Router();
 
@@ -19,58 +14,13 @@ const buildViewRouter = (appRoot: string): Express => {
   router.set('view engine', 'ejs');
   router.set('views', path.join(appRoot, '../templates'));
 
-  router.get('/', indexHandlers.getIndex);
-
-  router.get('/about-me', (request: Request, response: Response) => {
-    response.render('about-me', {
-      urls: constants.urls,
-      nav: {
-        ...constants.defaultNavOptions,
-        aboutMeClasses: 'active',
-      },
-      educationData,
-      achievements,
-      hobbies,
-    });
-  });
-
-  router.get('/professional-experience', (request: Request, response: Response) => {
-    response.render('professional-experience', {
-      urls: constants.urls,
-      nav: {
-        ...constants.defaultNavOptions,
-        professionalExperienceClasses: 'active',
-      },
-      professionalExperience,
-      skillColorMap,
-    });
-  });
-
-  router.get('/personal-projects', (request: Request, response: Response) => {
-    response.render('personal-projects', {
-      urls: constants.urls,
-      nav: {
-        ...constants.defaultNavOptions,
-        personalProjectsClasses: 'active',
-      },
-      personalProjects,
-      skillColorMap,
-    });
-  });
-
-  router.get('/red-white-and-brew', (request: Request, response: Response) => {
-    response.render('red-white-and-brew', {
-      urls: constants.urls,
-      nav: {
-        ...constants.defaultNavOptions,
-        rwabClasses: 'active',
-      },
-      rwabData,
-    });
-  });
-
-  router.get('/reading/log', readingHandlers.getReadingLog);
-  router.get('/reading/stats', readingHandlers.getReadingStats);
+  router.get('/', indexHandlers.getIndexView);
+  router.get('/about-me', aboutMeHandlers.getAboutMeView);
+  router.get('/professional-experience', professionalExperienceHandlers.getProfessionalExperienceView);
+  router.get('/personal-projects', personalProjectsHandlers.getPersonalProjectsView);
+  router.get('/red-white-and-brew', redWhiteAndBrewHandlers.getRedWhiteAndBrewView);
+  router.get('/reading/log', readingHandlers.getReadingLogView);
+  router.get('/reading/stats', readingHandlers.getReadingStatsView);
 
   return router;
 };
