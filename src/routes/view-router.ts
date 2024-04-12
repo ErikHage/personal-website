@@ -12,21 +12,7 @@ import rwabData from '../data/red-white-and-brew';
 
 import readingHandlers from '../handlers/reading-handlers';
 
-interface NavOptions {
-  aboutMeClasses: string,
-  professionalExperienceClasses: string,
-  personalProjectsClasses: string,
-  rwabClasses: string,
-}
-
 const router: Express = Router();
-
-const defaultNavOptions: NavOptions = {
-  aboutMeClasses: '',
-  professionalExperienceClasses: '',
-  personalProjectsClasses: '',
-  rwabClasses: '',
-};
 
 const buildViewRouter = (appRoot: string): Express => {
   router.set('view engine', 'ejs');
@@ -37,7 +23,7 @@ const buildViewRouter = (appRoot: string): Express => {
       // todo data here, maybe random photo or project highlights
       urls: constants.urls,
       nav: {
-        ...defaultNavOptions,
+        ...constants.defaultNavOptions,
       },
     });
   });
@@ -46,7 +32,7 @@ const buildViewRouter = (appRoot: string): Express => {
     response.render('about-me', {
       urls: constants.urls,
       nav: {
-        ...defaultNavOptions,
+        ...constants.defaultNavOptions,
         aboutMeClasses: 'active',
       },
       educationData,
@@ -59,7 +45,7 @@ const buildViewRouter = (appRoot: string): Express => {
     response.render('professional-experience', {
       urls: constants.urls,
       nav: {
-        ...defaultNavOptions,
+        ...constants.defaultNavOptions,
         professionalExperienceClasses: 'active',
       },
       professionalExperience,
@@ -71,7 +57,7 @@ const buildViewRouter = (appRoot: string): Express => {
     response.render('personal-projects', {
       urls: constants.urls,
       nav: {
-        ...defaultNavOptions,
+        ...constants.defaultNavOptions,
         personalProjectsClasses: 'active',
       },
       personalProjects,
@@ -83,7 +69,7 @@ const buildViewRouter = (appRoot: string): Express => {
     response.render('red-white-and-brew', {
       urls: constants.urls,
       nav: {
-        ...defaultNavOptions,
+        ...constants.defaultNavOptions,
         rwabClasses: 'active',
       },
       rwabData,
