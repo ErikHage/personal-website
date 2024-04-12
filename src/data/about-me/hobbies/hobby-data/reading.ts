@@ -8,12 +8,12 @@ const data: Hobby = {
     'audiobooks most of the time, so I can listen while driving/commuting.',
   links: [
     {
-      url: '/reading-log',
+      url: '/reading/log',
       description: 'My reading log',
       openInNewTab: false,
     },
     {
-      url: '/reading-stats',
+      url: '/reading/stats',
       description: 'My reading stats',
       openInNewTab: false,
     },

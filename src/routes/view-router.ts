@@ -89,7 +89,7 @@ const buildViewRouter = (appRoot: string): Express => {
     });
   });
 
-  router.get('/reading-log', (request: Request, response: Response) => {
+  router.get('/reading/log', (request: Request, response: Response) => {
     response.render('reading-log', {
       urls: constants.urls,
       nav: {
@@ -100,7 +100,7 @@ const buildViewRouter = (appRoot: string): Express => {
     });
   });
 
-  router.get('/reading-stats', (request: Request, response: Response) => {
+  router.get('/reading/stats', (request: Request, response: Response) => {
     response.render('reading-stats', {
       urls: constants.urls,
       nav: {
