@@ -1,11 +1,4 @@
-interface ImageWithCaption {
-  imagePath: string,
-  caption: string,
-}
-
-interface RWBData {
-  images: ImageWithCaption[],
-}
+import { RWBData } from '../types';
 
 const data: RWBData = {
   images: [
