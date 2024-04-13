@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import constants from '../helpers/constants';
-import professionalExperience from '../data/professional-experience';
+import professionalExperienceService from '../services/professional-experience/professional-experience-service';
 import skillColorMap from '../helpers/skill-color-map';
 
 function getProfessionalExperience(request: Request, response: Response) {
@@ -10,7 +10,8 @@ function getProfessionalExperience(request: Request, response: Response) {
       ...constants.defaultNavOptions,
       professionalExperienceClasses: 'active',
     },
-    professionalExperience,
+    jobData: professionalExperienceService.getJobData(),
+    consultingData: professionalExperienceService.getConsultingData(),
     skillColorMap,
   });
 }

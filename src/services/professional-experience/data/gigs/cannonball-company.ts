@@ -1,4 +1,4 @@
-import { WorkData } from '../index';
+import { WorkData } from '../../types';
 
 const data: WorkData = {
   companyName: 'Cannonball Company',
