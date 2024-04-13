@@ -1,4 +1,4 @@
-import { Achievement } from '../../../services/about-me/types';
+import { Achievement } from '../../types';
 
 const data: Achievement[] = [
   {

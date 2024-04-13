@@ -1,10 +1,10 @@
 import { EducationData, Achievement, Hobby } from './types';
 
-import fdmAcademy from '../../data/about-me/education/fdm-academy';
-import bostonUniversity from '../../data/about-me/education/boston-university';
-import theCollegeOfNewJersey from '../../data/about-me/education/the-college-of-new-jersey';
-import achievements from '../../data/about-me/achievements';
-import hobbyData from '../../data/about-me/hobbies';
+import fdmAcademy from './data/education/fdm-academy';
+import bostonUniversity from './data/education/boston-university';
+import theCollegeOfNewJersey from './data/education/the-college-of-new-jersey';
+import achievements from './data/achievements';
+import hobbyData from './data/hobbies';
 
 function getEducationData(): EducationData[] {
   return [

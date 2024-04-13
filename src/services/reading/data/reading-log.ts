@@ -1,4 +1,4 @@
-import { BookRecord } from '../../../services/reading/types';
+import { BookRecord } from '../types';
 
 const data: BookRecord[] = [
   {

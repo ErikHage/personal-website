@@ -1,4 +1,4 @@
-import { EducationData } from '../../../services/about-me/types';
+import { EducationData } from '../../types';
 
 const data: EducationData = {
   schoolName: 'Boston University',

@@ -1,6 +1,6 @@
 import { BookRecord, ReadingStats } from './types';
 import { calculateBooksByYear, calculateStats } from './stats';
-import readingLog from '../../data/about-me/reading/reading-log';
+import readingLog from './data/reading-log';
 
 function sortLogDescending(a: BookRecord, b: BookRecord): number {
   return b.start.getTime() - a.start.getTime();
