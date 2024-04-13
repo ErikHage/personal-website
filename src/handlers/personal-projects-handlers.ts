@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import constants from '../helpers/constants';
-import personalProjects from '../data/personal-projects';
+import personalProjectsService from '../services/personal-projects/personal-projects-service';
 import skillColorMap from '../helpers/skill-color-map';
 
 function getPersonalProjectsView(request: Request, response: Response) {
@@ -10,7 +10,7 @@ function getPersonalProjectsView(request: Request, response: Response) {
       ...constants.defaultNavOptions,
       personalProjectsClasses: 'active',
     },
-    personalProjects,
+    personalProjects: personalProjectsService.getPersonalProjects(),
     skillColorMap,
   });
 }

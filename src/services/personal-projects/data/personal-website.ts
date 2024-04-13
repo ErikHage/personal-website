@@ -1,4 +1,4 @@
-import { Project } from '../index';
+import { Project } from '../types';
 
 const data: Project = {
   projectName: 'Personal (This) Website',
