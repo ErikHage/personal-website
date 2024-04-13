@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
+
 import constants from '../helpers/constants';
-import educationData from '../data/about-me/education';
-import achievements from '../data/about-me/achievements';
-import hobbies from '../data/about-me/hobbies';
+import aboutMeService from '../services/about-me/about-me-service';
 
 function getAboutMe(request: Request, response: Response) {
   response.render('about-me', {
@@ -11,9 +10,9 @@ function getAboutMe(request: Request, response: Response) {
       ...constants.defaultNavOptions,
       aboutMeClasses: 'active',
     },
-    educationData,
-    achievements,
-    hobbies,
+    educationData: aboutMeService.getEducationData(),
+    achievements: aboutMeService.getAchievementData(),
+    hobbies: aboutMeService.getHobbyData(),
   });
 }
 

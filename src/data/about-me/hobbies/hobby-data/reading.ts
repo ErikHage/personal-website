@@ -1,4 +1,4 @@
-import { Hobby } from '../types';
+import { Hobby } from '../../../../services/about-me/types';
 
 const data: Hobby = {
   name: 'Reading',

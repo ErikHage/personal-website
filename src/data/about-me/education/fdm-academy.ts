@@ -1,4 +1,4 @@
-import { EducationData } from './index';
+import { EducationData } from '../../../services/about-me/types';
 
 const data: EducationData = {
   schoolName: 'FDM Academy',

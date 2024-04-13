@@ -1,3 +1,5 @@
+import { Hobby } from '../../../services/about-me/types';
+
 import homebrewing from './hobby-data/homebrewing';
 import videoGames from './hobby-data/video-games';
 import cooking from './hobby-data/cooking';
@@ -5,7 +7,6 @@ import woodWorking from './hobby-data/wood-working';
 // import gardening from './hobby-data/gardening';
 import chickens from './hobby-data/chickens';
 import reading from './hobby-data/reading';
-import { Hobby } from './types';
 
 const data: Hobby[] = [
   homebrewing,

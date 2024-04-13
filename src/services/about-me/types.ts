@@ -15,3 +15,17 @@ export interface Hobby {
   links: HobbyLink[],
   images: HobbyImage[],
 }
+
+export interface EducationData {
+  schoolName: string,
+  schoolLogo: string,
+  degree: string,
+  completionDate: string,
+  accolades?: string,
+  description: string,
+}
+
+export interface Achievement {
+  name: string,
+  description?: string,
+}

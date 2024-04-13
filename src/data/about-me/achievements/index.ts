@@ -1,7 +1,4 @@
-interface Achievement {
-  name: string,
-  description?: string,
-}
+import { Achievement } from '../../../services/about-me/types';
 
 const data: Achievement[] = [
   {
