@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import constants from '../helpers/constants';
-import readingData from '../data/about-me/reading';
+import readingService from '../services/reading/reading-service';
 
 function getReadingLogView(request: Request, response: Response) {
   response.render('reading-log', {
@@ -9,7 +9,7 @@ function getReadingLogView(request: Request, response: Response) {
       ...constants.defaultNavOptions,
       aboutMeClasses: 'active',
     },
-    readingLog: readingData.readingLog,
+    readingLog: readingService.getReadingLog(),
   });
 }
 
@@ -20,7 +20,7 @@ function getReadingStatsView(request: Request, response: Response) {
       ...constants.defaultNavOptions,
       aboutMeClasses: 'active',
     },
-    readingData,
+    readingData: readingService.getReadingStats(),
   });
 }
 

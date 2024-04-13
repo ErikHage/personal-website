@@ -17,8 +17,7 @@ export interface BooksPerYear {
   count: number,
 }
 
-export interface Reading {
-  readingLog: BookRecord[],
+export interface ReadingStats {
   stats: ReadingStat[],
   booksByYear: BooksPerYear[],
 }
