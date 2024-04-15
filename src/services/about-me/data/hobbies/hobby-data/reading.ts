@@ -13,6 +13,11 @@ const data: Hobby = {
       openInNewTab: false,
     },
     {
+      url: '/reading/series',
+      description: 'My series log',
+      openInNewTab: false,
+    },
+    {
       url: '/reading/stats',
       description: 'My reading stats',
       openInNewTab: false,
