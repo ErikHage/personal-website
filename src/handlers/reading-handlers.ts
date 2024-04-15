@@ -24,7 +24,19 @@ function getReadingStatsView(request: Request, response: Response) {
   });
 }
 
+function getSeriesStatsView(request: Request, response: Response) {
+  response.render('reading-series', {
+    urls: constants.urls,
+    nav: {
+      ...constants.defaultNavOptions,
+      aboutMeClasses: 'active',
+    },
+    seriesData: readingService.getSeriesStats(),
+  });
+}
+
 export default {
-  getReadingLogView: getReadingLogView,
-  getReadingStatsView: getReadingStatsView,
+  getReadingLogView,
+  getReadingStatsView,
+  getSeriesStatsView,
 };

@@ -21,3 +21,8 @@ export interface ReadingStats {
   stats: ReadingStat[],
   booksByYear: BooksPerYear[],
 }
+
+export interface SeriesRecord {
+  name: string,
+  titles: BookRecord[],
+}

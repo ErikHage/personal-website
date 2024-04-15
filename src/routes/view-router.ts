@@ -15,12 +15,18 @@ const buildViewRouter = (appRoot: string): Express => {
   router.set('views', path.join(appRoot, '../templates'));
 
   router.get('/', indexHandlers.getIndexView);
+
   router.get('/about-me', aboutMeHandlers.getAboutMeView);
+
   router.get('/professional-experience', professionalExperienceHandlers.getProfessionalExperienceView);
+
   router.get('/personal-projects', personalProjectsHandlers.getPersonalProjectsView);
+
   router.get('/red-white-and-brew', redWhiteAndBrewHandlers.getRedWhiteAndBrewView);
+
   router.get('/reading/log', readingHandlers.getReadingLogView);
   router.get('/reading/stats', readingHandlers.getReadingStatsView);
+  router.get('/reading/series', readingHandlers.getSeriesStatsView);
 
   return router;
 };
