@@ -2293,6 +2293,7 @@ const data: BookRecord[] = [
     installment: 5,
     author: 'Gene Wolf',
     start: new Date('3/30/24'),
+    finish: new Date('4/24/24'),
   },
 ]
 
