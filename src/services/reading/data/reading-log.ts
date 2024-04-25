@@ -2295,6 +2295,11 @@ const data: BookRecord[] = [
     start: new Date('3/30/24'),
     finish: new Date('4/24/24'),
   },
+  {
+    title: 'The Stars My Destination',
+    author: 'Alfred Bester',
+    start: new Date('4/25/24'),
+  },
 ]
 
 export default data;
