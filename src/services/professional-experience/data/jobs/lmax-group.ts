@@ -45,6 +45,13 @@ const data: WorkData = {
         'is to allow holders of Pyth on the LMAX Custodian to vote in governance.',
       skillsUsed: [ 'VueJS', 'Java', ],
     },
+    {
+      title: 'Price Check Venue',
+      summary: 'A separate venue within the exchange that is configured for price check (last look) ' +
+        'functionality. Makers provide quotes to the execution venue instead of firm pricing. This ' +
+        'allows makers to reject matches or execute a trade.',
+      skillsUsed: [ 'Java', ],
+    },
   ],
 };
 
