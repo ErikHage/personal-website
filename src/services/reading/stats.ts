@@ -2,6 +2,7 @@ import { BookRecord, BooksPerYear, ReadingStat } from './types'
 
 const MILLIS_PER_DAY: number = 1000 * 60 * 60 * 24;
 const MILLIS_PER_YEAR: number = 1000 * 60 * 60 * 24 * 365;
+const START_DATE =  new Date('11/5/11');
 
 const newStat = (name: string, value: string): ReadingStat => ({
   name,
@@ -29,15 +30,12 @@ function getCurrentBooks(readingLog: BookRecord[]): BookRecord[] {
   return readingLog.filter((record: BookRecord) => record.finish === undefined);
 }
 
-function getStartDate(readingLog: BookRecord[]): Date {
-  return readingLog[readingLog.length - 1]?.start ?? new Date();
-}
-
 function getBooksPerYear(numRead: number, startDate: Date): number {
   const now: Date = new Date();
   const totalYears = (now.getTime() - startDate.getTime()) / MILLIS_PER_YEAR;
+  const booksPerYear = numRead / totalYears;
 
-  return numRead / totalYears;
+  return (Math.round(100 * booksPerYear)) / 100;
 }
 
 function getFastestAndSlowestRead(readingLog: BookRecord[]): {
@@ -95,7 +93,6 @@ export function calculateStats(readingLog: BookRecord[]): ReadingStat[] {
 
   const lastBook: BookRecord = lastBookRead(readingLog);
   const currentBooks: BookRecord[] = getCurrentBooks(readingLog);
-  const startOfLogging: Date = getStartDate(readingLog);
   const numRead: number = countBooksRead(readingLog);
   const {
     fastestRead,
@@ -107,7 +104,7 @@ export function calculateStats(readingLog: BookRecord[]): ReadingStat[] {
   stats.push(newStat('Currently Reading', currentBooks.map(book => bookToString(book)).join(', ')));
   stats.push(newStat('Books Read', numRead.toString()));
   stats.push(newStat('Last Finished', bookToString(lastBook)));
-  stats.push(newStat('Books Per Year', getBooksPerYear(numRead, startOfLogging).toString()));
+  stats.push(newStat('Books Per Year', getBooksPerYear(numRead, START_DATE).toString()));
   stats.push(newStat('Fastest Read', `[${fastestDays} days] ${bookToString(fastestRead)}`));
   stats.push(newStat('Slowest Read', `[${slowestDays} days] ${bookToString(slowestRead)}`));
 
