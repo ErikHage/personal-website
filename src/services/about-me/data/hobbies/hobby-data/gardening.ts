@@ -8,10 +8,10 @@ const data: Hobby = {
     'a new garden.',
   links: [],
   images: [
-    // { // todo
-    //   imagePath: '/images/hobbies/gardening/',
-    //   caption: 'New House Garden Year 1',
-    // },
+    {
+      imagePath: '/images/hobbies/gardening/new-garden-beds.jpg',
+      caption: 'New House Garden Beds Year 1',
+    },
   ],
 };
 
