@@ -12,6 +12,10 @@ const data: Hobby = {
       imagePath: '/images/hobbies/gardening/new-garden-beds.jpg',
       caption: 'New House Garden Beds Year 1',
     },
+    {
+      imagePath: '/images/hobbies/gardening/planting.jpg',
+      caption: 'First Day of Planting',
+    },
   ],
 };
 
