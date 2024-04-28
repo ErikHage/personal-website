@@ -16,7 +16,7 @@ const data: Hobby = {
     },
     {
       imagePath: '/images/hobbies/cooking/fried_rice.jpg',
-      caption: 'Fried Rice',
+      caption: 'Chicken Fried Rice',
     },
     {
       imagePath: '/images/hobbies/cooking/pad_thai.jpg',
