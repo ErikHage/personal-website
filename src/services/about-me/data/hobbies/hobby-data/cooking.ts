@@ -32,7 +32,7 @@ const data: Hobby = {
     },
     {
       imagePath: '/images/hobbies/cooking/turkey.jpg',
-      caption: '',
+      caption: 'Good Eats Turkey',
     },
   ],
 };
