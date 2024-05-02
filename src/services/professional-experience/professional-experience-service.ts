@@ -1,13 +1,12 @@
 import { WorkData } from './types';
-
-import data from './data';
+import professionalExperienceDatasource from './professional-experience-datasource';
 
 function getJobData(): WorkData[] {
-  return data.jobs;
+  return professionalExperienceDatasource.getJobData();
 }
 
 function getConsultingData(): WorkData[]  {
-  return data.consulting;
+  return professionalExperienceDatasource.getConsultingData();
 }
 
 export default {
