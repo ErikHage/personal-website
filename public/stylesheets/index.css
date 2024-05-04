@@ -8,3 +8,15 @@
   display: block;
   font-weight: bold;
 }
+
+.project-card {
+  height: 100%;
+}
+
+.project-name {
+  font-weight: bold;
+}
+
+.project-summary {
+  margin-bottom: 15px;
+}

@@ -33,13 +33,46 @@
             <span class="intro-paragraph">
                 Hi, my name is Erik Hage. Welcome to my personal website.
             </span>
+
             <br/>
+
             <span class="intro-paragraph">
                 Check out some of my <a href="/about-me#hobbies">hobbies</a>. I like to cook,
                 brew beer, write code, build stuff, and play games. Or maybe take a look at
-                some <a href="/personal-projects">personal projects</a> I'm working on.
+                some <a href="/personal-projects">personal projects</a> I'm working on,
+                like this one:
             </span>
+
             <br/>
+
+            <div class="row">
+                <div class="col-0 col-lg-2"></div>
+                <div class="col-0 col-lg-8">
+                    <div class="card project-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="project-name"><%= highlights.project.projectName %></span>
+                                <% highlights.project.iconLinks.forEach((iconLink) => { %>
+                                    <a class="<%= iconLink.buttonClasses %>" href="<%= iconLink.link %>"
+                                       target="_blank" data-bs-toggle="tooltip" data-bs-placement="top"
+                                       title="<%= iconLink.tooltip %>"><i class="<%= iconLink.fontAwesomeClasses %>"></i></a>
+                                <% }); %>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="project-summary"><span><%- highlights.project.summary %></span></div>
+
+                            <% highlights.project.skillsUsed.forEach((skill) => { %>
+                                <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-0 col-lg-2"></div>
+            </div>
+
+            <br/>
+
             <span class="intro-paragraph">
                 I'm part owner of a small brewery in South New Jersey called
                 <a href="/red-white-and-brew">Red White & Brew</a>. We make a pretty good
