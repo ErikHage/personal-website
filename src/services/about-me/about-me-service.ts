@@ -1,25 +1,17 @@
 import { EducationData, Achievement, Hobby } from './types';
 
-import fdmAcademy from './data/education/fdm-academy';
-import bostonUniversity from './data/education/boston-university';
-import theCollegeOfNewJersey from './data/education/the-college-of-new-jersey';
-import achievements from './data/achievements';
-import hobbyData from './data/hobbies';
+import aboutMeDatasource from './about-me-datasource';
 
 function getEducationData(): EducationData[] {
-  return [
-    fdmAcademy,
-    bostonUniversity,
-    theCollegeOfNewJersey,
-  ];
+  return aboutMeDatasource.getEducationData();
 }
 
 function getAchievementData(): Achievement[] {
-  return achievements;
+  return aboutMeDatasource.getAchievementData();
 }
 
 function getHobbyData(): Hobby[] {
-  return hobbyData;
+  return aboutMeDatasource.getHobbyData();
 }
 
 export default {
