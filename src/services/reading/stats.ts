@@ -23,7 +23,12 @@ function countBooksRead(readingLog: BookRecord[]): number {
 }
 
 function lastBookRead(readingLog: BookRecord[]): BookRecord {
-  return readingLog.find((record: BookRecord) => record.finish !== undefined)!;
+  for (let i = readingLog.length - 1; i >= 0 ; i--) {
+    if (readingLog[i] && readingLog[i]!.finish) {
+      return readingLog[i]!;
+    }
+  }
+  return readingLog[0]!;
 }
 
 function getCurrentBooks(readingLog: BookRecord[]): BookRecord[] {
