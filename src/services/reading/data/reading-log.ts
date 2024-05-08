@@ -2299,6 +2299,14 @@ const data: BookRecord[] = [
     title: 'The Stars My Destination',
     author: 'Alfred Bester',
     start: new Date('4/25/24'),
+    finish: new Date('5/4/24'),
+  },
+  {
+    title: 'Uncompromising Honor',
+    series: 'Honor Harrington',
+    installment: 14,
+    author: 'David Weber',
+    start: new Date('5/5/24'),
   },
 ]
 
