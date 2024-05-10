@@ -18,80 +18,88 @@
 <%- include('./partials/_nav'); %>
 
 <div class="container-fluid">
-    <div class="page-title text-center">
-        <h2>Red White & Brew Beer Company</h2>
-    </div>
-
     <div class="row">
-        <div class="col text-center">
-            <img class="img-fluid company-logo" src="/images/logos/rwab_logo.jpeg" alt="rw&b logo">
-        </div>
-    </div>
+        <div class="col-2"></div>
+        <div class="col-8 content-pane">
 
-    <div class="row">
-        <div class="col-0 col-lg-2"></div>
-        <div class="col-12 col-lg-8">
-            <div class="card">
-                <div class="card-header rwbbc-intro">
-                    <span class="rwbbc-intro-paragraph">
-                        The Red White and Brew Beer Company was founded in 2016 with the goal of providing the
-                        citizens of Camden and Gloucester counties with high quality craft beer. We are a production
-                        microbrewery serving up artisanal craft ales to local beer lovers and connoisseurs.
-                    </span>
-                    <br/>
-                    <span class="rwbbc-intro-paragraph">
-                        Check out our website <a href="https://rwabbc.com" target="_blank">rwabbc.com</a>.
-                    </span>
-                    <br/>
-                    <span class="rwbbc-intro-paragraph">
-                        Or jump right to our <a href="https://rwabbc.com/on-tap" target="_blank">taplist</a>.
-                    </span>
+            <div class="page-title text-center">
+                <h2>Red White & Brew Beer Company</h2>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    <img class="img-fluid company-logo" src="/images/logos/rwab_logo.jpeg" alt="rw&b logo">
                 </div>
             </div>
-        </div>
-        <div class="col-0 col-lg-2"></div>
-    </div>
 
-    <hr/>
-
-    <div class="row">
-        <div class="col-0 col-lg-4"></div>
-        <div class="col-12 col-lg-4">
-            <div id="rwbCarousel" class="carousel slide" data-bs-ride="carousel">
-                <!-- Indicators/dots -->
-                <div class="carousel-indicators">
-                    <% rwabData.images.forEach((image, i) => {
-                        const indicatorClasses = i === 0 ? 'active' : '';
-                    %>
-                    <button type="button" class="<%= indicatorClasses ;%>" data-bs-target="#rwbCarousel"
-                            data-bs-slide-to="<%= i ;%>"></button>
-                    <% }); %>
-                </div>
-
-                <!-- The content -->
-                <div class="carousel-inner">
-                    <% rwabData.images.forEach((image, i) => {
-                        const contentClasses = i === 0 ? 'carousel-item img-fluid active' : 'carousel-item img-fluid';
-                    %>
-                    <div class="<%= contentClasses ;%>">
-                        <img src="<%= image.imagePath ;%>" alt="<%= image.caption ;%>" class="d-block w-100">
-                        <div class="carousel-caption-wrapper">
-                            <p class="carousel-caption"><%= image.caption ;%></p>
+            <div class="row">
+                <div class="col-0 col-lg-1"></div>
+                <div class="col-12 col-lg-10">
+                    <div class="card">
+                        <div class="card-header rwbbc-intro">
+                            <span class="rwbbc-intro-paragraph">
+                                The Red White and Brew Beer Company was founded in 2016 with the goal of providing the
+                                citizens of Camden and Gloucester counties with high quality craft beer. We are a production
+                                microbrewery serving up artisanal craft ales to local beer lovers and connoisseurs.
+                            </span>
+                            <br/>
+                            <span class="rwbbc-intro-paragraph">
+                                Check out our website <a href="https://rwabbc.com" target="_blank">rwabbc.com</a>.
+                            </span>
+                            <br/>
+                            <span class="rwbbc-intro-paragraph">
+                                Or jump right to our <a href="https://rwabbc.com/on-tap" target="_blank">taplist</a>.
+                            </span>
                         </div>
                     </div>
-                    <% }); %>
                 </div>
-
-                <!-- Left and right controls/icons -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#rwbCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#rwbCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
+                <div class="col-0 col-lg-1"></div>
             </div>
+
+            <hr/>
+
+            <div class="row">
+                <div class="col-0 col-lg-4"></div>
+                <div class="col-12 col-lg-4">
+                    <div id="rwbCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
+                            <% rwabData.images.forEach((image, i) => {
+                                const indicatorClasses = i === 0 ? 'active' : '';
+                            %>
+                            <button type="button" class="<%= indicatorClasses ;%>" data-bs-target="#rwbCarousel"
+                                    data-bs-slide-to="<%= i ;%>"></button>
+                            <% }); %>
+                        </div>
+
+                        <!-- The content -->
+                        <div class="carousel-inner">
+                            <% rwabData.images.forEach((image, i) => {
+                                const contentClasses = i === 0 ? 'carousel-item img-fluid active' : 'carousel-item img-fluid';
+                            %>
+                            <div class="<%= contentClasses ;%>">
+                                <img src="<%= image.imagePath ;%>" alt="<%= image.caption ;%>" class="d-block w-100">
+                                <div class="carousel-caption-wrapper">
+                                    <p class="carousel-caption"><%= image.caption ;%></p>
+                                </div>
+                            </div>
+                            <% }); %>
+                        </div>
+
+                        <!-- Left and right controls/icons -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#rwbCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#rwbCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-2 col-lg-4"></div>
+            </div>
+
         </div>
-        <div class="col-2 col-lg-4"></div>
+        <div class="col-2"></div>
     </div>
 
     <%- include('./partials/_footer'); %>
