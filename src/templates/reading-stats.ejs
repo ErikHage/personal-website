@@ -18,48 +18,55 @@
 <%- include('./partials/_nav'); %>
 
 <div class="container-fluid scroll-spy-area">
-    <div class="page-title text-center">
-        <h2>Reading Stats</h2>
-    </div>
-
     <div class="row">
-        <div class="col-0 col-md-3"></div>
-        <div class="col-12 col-md-6">
-            <table class="table table-striped table-hover">
-                <tbody>
-                <% readingData.stats.forEach(stat => { %>
-                    <tr>
-                        <th><%= stat.name %></th>
-                        <td><%= stat.value %></td>
-                    </tr>
-                <% }) %>
-                </tbody>
-            </table>
+        <div class="col-2"></div>
+        <div class="col-8 content-pane">
+
+            <div class="page-title text-center">
+                <h2>Reading Stats</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-0 col-md-3"></div>
+                <div class="col-12 col-md-6">
+                    <table class="table table-striped table-hover">
+                        <tbody>
+                        <% readingData.stats.forEach(stat => { %>
+                            <tr>
+                                <th><%= stat.name %></th>
+                                <td><%= stat.value %></td>
+                            </tr>
+                        <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-0 col-md-3"></div>
+            </div>
+
+            <div class="page-title text-center">
+                <h2>Books per Year</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-2 col-md-4"></div>
+                <div class="col-8 col-md-4">
+                    <table class="table table-striped table-hover">
+                        <tbody>
+                        <% readingData.booksByYear.forEach(stat => { %>
+                            <tr>
+                                <th><%= stat.year %></th>
+                                <td><%= stat.count %></td>
+                            </tr>
+                        <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-2 col-md-4"></div>
+            </div>
+
         </div>
-        <div class="col-0 col-md-3"></div>
+        <div class="col-2"></div>
     </div>
-
-    <div class="page-title text-center">
-        <h2>Books per Year</h2>
-    </div>
-
-    <div class="row">
-        <div class="col-2 col-md-4"></div>
-        <div class="col-8 col-md-4">
-            <table class="table table-striped table-hover">
-                <tbody>
-                <% readingData.booksByYear.forEach(stat => { %>
-                    <tr>
-                        <th><%= stat.year %></th>
-                        <td><%= stat.count %></td>
-                    </tr>
-                <% }) %>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-2 col-md-4"></div>
-    </div>
-
     <%- include('./partials/_footer'); %>
 </div>
 </body>

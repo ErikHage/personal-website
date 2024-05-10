@@ -37,41 +37,48 @@ function calculateDays(start, finish) {
 <%- include('./partials/_nav'); %>
 
 <div class="container-fluid scroll-spy-area">
-    <div class="page-title text-center">
-        <h2>Reading Log</h2>
-    </div>
-
     <div class="row">
-        <div class="col-0 col-md-1"></div>
-        <div class="col-12 col-md-10">
-            <table class="table table-striped table-hover table-sm">
-                <thead>
-                <tr>
-                    <th style="width: 30%">Title</th>
-                    <th style="width: 5%">#</th>
-                    <th style="width: 20%">Author</th>
-                    <th style="width: 10%">Start</th>
-                    <th style="width: 10%">Finish</th>
-                    <th style="width: 5%">Days</th>
-                </tr>
-                </thead>
-                <tbody>
-                <% readingLog.forEach(record => { %>
-                    <tr>
-                        <td class="text-wrap"><%= record.title %></td>
-                        <td><%= record.installment %></td>
-                        <td class="text-wrap"><%= record.author %></td>
-                        <td><%= formatDate(record.start) %></td>
-                        <td><%= formatDate(record.finish) %></td>
-                        <td><%= calculateDays(record.start, record.finish) %></td>
-                    </tr>
-                <% }) %>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-0 col-md-1"></div>
-    </div>
+        <div class="col-2"></div>
+        <div class="col-8 content-pane">
 
+            <div class="page-title text-center">
+                <h2>Reading Log</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-0 col-md-1"></div>
+                <div class="col-12 col-md-10">
+                    <table class="table table-striped table-hover table-sm">
+                        <thead>
+                        <tr>
+                            <th style="width: 30%">Title</th>
+                            <th style="width: 5%">#</th>
+                            <th style="width: 20%">Author</th>
+                            <th style="width: 10%">Start</th>
+                            <th style="width: 10%">Finish</th>
+                            <th style="width: 5%">Days</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% readingLog.forEach(record => { %>
+                            <tr>
+                                <td class="text-wrap"><%= record.title %></td>
+                                <td><%= record.installment %></td>
+                                <td class="text-wrap"><%= record.author %></td>
+                                <td><%= formatDate(record.start) %></td>
+                                <td><%= formatDate(record.finish) %></td>
+                                <td><%= calculateDays(record.start, record.finish) %></td>
+                            </tr>
+                        <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-0 col-md-1"></div>
+            </div>
+
+        </div>
+        <div class="col-2"></div>
+    </div>
     <%- include('./partials/_footer'); %>
 </div>
 </body>
