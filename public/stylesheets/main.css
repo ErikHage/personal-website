@@ -1,10 +1,28 @@
-html {
-  scroll-behavior: smooth;
-  background-color: lightgrey;
+body, html {
+  background-image: url("/images/backgrounds/beveled_squares_seamless_dark_red.jpg");
+  background-size: auto;
 }
 
-body {
+.content-pane {
   background-color: lightgrey;
+  padding-top: 25px;
+  margin-top: -25px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+footer {
+  background-color: #212529;
+  height: 40px;
+  padding-top: 8px;
+}
+
+.copyright {
+  color: lightgrey;
 }
 
 .page-title {

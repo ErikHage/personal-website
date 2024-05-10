@@ -27,152 +27,162 @@
 </nav>
 
 <div class="container-fluid scroll-spy-area" data-bs-spy="scroll" data-bs-target="#pageNavbar" data-bs-offset="10">
-    <div class="page-title text-center">
-        <h2>About Me</h2>
-    </div>
-
     <div class="row">
-        <div class="col-0 col-md-1 col-lg-2"></div>
-        <div class="col-12 col-md-10 col-lg-8">
+        <div class="col-2"></div>
+        <div class="col-8 content-pane">
+
+
+            <div class="page-title text-center">
+                <h2>About Me</h2>
+            </div>
 
             <div class="row">
-                <div class="col">
-                    <div class="card about-me-card">
-                        <div class="card-header">
-                            <span id="summaryHeader">Summary</span>
-                        </div>
-                        <div class="card-body">
-                    <span>I'm an independent self-starter with expertise in Java, NodeJS, Golang, and Dart who has a proven track
-                        record of completing high priority projects accurately and efficiently.
-                        I am adept at time management and experienced with large scale projects in a global agile team environment.
-                        I'm always looking for new ways in which to expand and enhance my skill set and to have the
-                        opportunity to work on new and challenging projects.
-                    </span>
+                <div class="col-0 col-md-1"></div>
+                <div class="col-12 col-md-10">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card about-me-card">
+                                <div class="card-header">
+                                    <span id="summaryHeader">Summary</span>
+                                </div>
+                                <div class="card-body">
+                            <span>I'm an independent self-starter with expertise in Java, NodeJS, Golang, and Dart who has a proven track
+                                record of completing high priority projects accurately and efficiently.
+                                I am adept at time management and experienced with large scale projects in a global agile team environment.
+                                I'm always looking for new ways in which to expand and enhance my skill set and to have the
+                                opportunity to work on new and challenging projects.
+                            </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div id="education" class="row">
-                <div class="section-title text-center">
-                    <h3>Education</h3>
-                </div>
+                    <div id="education" class="row">
+                        <div class="section-title text-center">
+                            <h3>Education</h3>
+                        </div>
 
-                <% educationData.forEach((education) => { %>
-                    <div class="col-12">
-                        <div class="card education-card">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col-9">
+                        <% educationData.forEach((education) => { %>
+                            <div class="col-12">
+                                <div class="card education-card">
+                                    <div class="card-header">
                                         <div class="row">
-                                            <div class="col-2 text-start d-none d-sm-block">
-                                                <div class="school-logo-wrapper text-center">
-                                                    <img class="img school-logo" src="<%= education.schoolLogo %>" alt="School Logo">
-                                                </div>
-                                            </div>
-                                            <div class="col-10 text-start">
-                                                <div class="education-school">
-                                                    <span><%= education.schoolName %></span>
-                                                </div>
-                                                <div class="education-degree">
-                                                    <span><%= education.degree %></span>
-                                                </div>
-                                                <% if (education.accolades) { %>
-                                                    <div class="education-accolades">
-                                                        <span><%= education.accolades %></span>
+                                            <div class="col-9">
+                                                <div class="row">
+                                                    <div class="col-2 text-start d-none d-sm-block">
+                                                        <div class="school-logo-wrapper text-center">
+                                                            <img class="img school-logo" src="<%= education.schoolLogo %>" alt="School Logo">
+                                                        </div>
                                                     </div>
-                                                <% } %>
+                                                    <div class="col-10 text-start">
+                                                        <div class="education-school">
+                                                            <span><%= education.schoolName %></span>
+                                                        </div>
+                                                        <div class="education-degree">
+                                                            <span><%= education.degree %></span>
+                                                        </div>
+                                                        <% if (education.accolades) { %>
+                                                            <div class="education-accolades">
+                                                                <span><%= education.accolades %></span>
+                                                            </div>
+                                                        <% } %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 text-end">
+                                                <span class="education-date"><%= education.completionDate %></span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3 text-end">
-                                        <span class="education-date"><%= education.completionDate %></span>
+                                    <div class="card-body">
+                                        <div class="education-description">
+                                            <span><%- education.description %></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <div class="education-description">
-                                    <span><%- education.description %></span>
-                                </div>
-                            </div>
-                        </div>
+                        <% }); %>
                     </div>
-                <% }); %>
-            </div>
 
-            <div id="achievements" class="row">
-                <div class="section-title text-center">
-                    <h3>Achievements</h3>
-                </div>
-                <% achievements.forEach((achievement) => { %>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="achievement-wrapper">
-                                    <div class="achievement-name">
-                                        <span><%= achievement.name %></span>
+                    <div id="achievements" class="row">
+                        <div class="section-title text-center">
+                            <h3>Achievements</h3>
+                        </div>
+                        <% achievements.forEach((achievement) => { %>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="achievement-wrapper">
+                                            <div class="achievement-name">
+                                                <span><%= achievement.name %></span>
+                                            </div>
+                                            <% if (achievement.description) { %>
+                                                <div class="achievement-description">
+                                                    <span><%- achievement.description %></span>
+                                                </div>
+                                            <% } %>
+                                        </div>
                                     </div>
-                                    <% if (achievement.description) { %>
-                                        <div class="achievement-description">
-                                            <span><%- achievement.description %></span>
-                                        </div>
-                                    <% } %>
                                 </div>
                             </div>
-                        </div>
+                        <% }); %>
                     </div>
-                <% }); %>
-            </div>
 
-            <div id="hobbies" class="row">
-                <div class="section-title text-center">
-                    <h3>Hobbies</h3>
-                </div>
+                    <div id="hobbies" class="row">
+                        <div class="section-title text-center">
+                            <h3>Hobbies</h3>
+                        </div>
 
-                <% hobbies.forEach((hobby, i) => { %>
-                    <div class="col-12">
-                        <div class="card hobby-card">
-                            <div class="card-header">
-                                <div><span class="hobby-name"><%= hobby.name %></span></div>
-                            </div>
-                            <div class="card-body">
-                                <div class="hobby-description"><span><%- hobby.description %></span></div>
+                        <% hobbies.forEach((hobby, i) => { %>
+                            <div class="col-12">
+                                <div class="card hobby-card">
+                                    <div class="card-header">
+                                        <div><span class="hobby-name"><%= hobby.name %></span></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="hobby-description"><span><%- hobby.description %></span></div>
 
-                                <% if (hobby.links.length > 0) { %>
-                                    <% hobby.links.forEach((link) => { %>
-                                        <div class="hobby-link">
-                                            <a href="<%= link.url %>"
-                                               <% if (link.openInNewTab) { %> target="_blank" <% } %>
-                                               ><%= link.description %></a>
-                                        </div>
-                                    <% }); %>
-                                <% } %>
-
-                                <% if (hobby.images.length > 0) { %>
-                                    <% const collapseId = `collapse${i}`; %>
-                                    <a data-bs-toggle="collapse" data-bs-target="#<%= collapseId %>"><i class="fa-solid fa-camera"></i><i class="fa-solid fa-chevron-down"></i></a>
-                                    <div id="<%= collapseId %>" class="collapse">
-                                        <hr />
-                                        <div class="row text-center text-lg-start">
-                                            <% hobby.images.forEach((image) => { %>
-                                                <div class="col-6 col-md-4 col-lg-2">
-                                                    <a href="#" class="d-block mb-4 h-100" data-bs-toggle="modal" data-bs-target="#imageModal">
-                                                        <img class="img-fluid img-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
-                                                    </a>
+                                        <% if (hobby.links.length > 0) { %>
+                                            <% hobby.links.forEach((link) => { %>
+                                                <div class="hobby-link">
+                                                    <a href="<%= link.url %>"
+                                                       <% if (link.openInNewTab) { %> target="_blank" <% } %>
+                                                       ><%= link.description %></a>
                                                 </div>
                                             <% }); %>
-                                        </div>
+                                        <% } %>
+
+                                        <% if (hobby.images.length > 0) { %>
+                                            <% const collapseId = `collapse${i}`; %>
+                                            <a data-bs-toggle="collapse" data-bs-target="#<%= collapseId %>"><i class="fa-solid fa-camera"></i><i class="fa-solid fa-chevron-down"></i></a>
+                                            <div id="<%= collapseId %>" class="collapse">
+                                                <hr />
+                                                <div class="row text-center text-lg-start">
+                                                    <% hobby.images.forEach((image) => { %>
+                                                        <div class="col-6 col-md-4 col-lg-2">
+                                                            <a href="#" class="d-block mb-4 h-100" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                                                <img class="img-fluid img-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
+                                                            </a>
+                                                        </div>
+                                                    <% }); %>
+                                                </div>
+                                            </div>
+                                        <% } %>
                                     </div>
-                                <% } %>
+                                </div>
                             </div>
-                        </div>
+                        <% }); %>
                     </div>
-                <% }); %>
+
+                </div>
+                <div class="col-0 col-md-1"></div>
             </div>
 
         </div>
-        <div class="col-0 col-md-1 col-lg-2"></div>
+        <div class="col-2"></div>
     </div>
+
 
     <div id="imageModal" class="modal">
         <div class="modal-dialog modal-lg modal-dialog-centered">
