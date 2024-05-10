@@ -17,58 +17,66 @@
 <body>
 <%- include('./partials/_nav'); %>
 <div class="container-fluid">
-    <div class="page-title text-center">
-        <h2>Personal Projects</h2>
-    </div>
-
     <div class="row">
-        <div class="col-0 col-md-0 col-lg-2"></div>
-        <div class="col-12 col-md-12 col-lg-8">
+        <div class="col-2"></div>
+        <div class="col-8 content-pane">
+
+            <div class="page-title text-center">
+                <h2>Personal Projects</h2>
+            </div>
+
             <div class="row">
-                <% personalProjects.forEach((project, i) => { %>
-                    <div class="col-12 col-md-6 bottom-margin-15">
-                        <div class="card project-card">
-                            <div class="card-header">
-                                <div>
-                                    <span class="project-name"><%= project.projectName %></span>
-                                    <% project.iconLinks.forEach((iconLink) => { %>
-                                        <a class="<%= iconLink.buttonClasses %>" href="<%= iconLink.link %>"
-                                           target="_blank" data-bs-toggle="tooltip" data-bs-placement="top"
-                                           title="<%= iconLink.tooltip %>"><i class="<%= iconLink.fontAwesomeClasses %>"></i></a>
-                                    <% }); %>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="project-summary"><span><%- project.summary %></span></div>
-
-                                <% project.skillsUsed.forEach((skill) => { %>
-                                    <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
-                                <% }); %>
-
-                                <% if (project.images.length > 0) { %>
-                                    <% const collapseId = `collapse${i}`; %>
-                                    <span>|</span>
-                                    <a data-bs-toggle="collapse" data-bs-target="#<%= collapseId %>"><i class="fa-solid fa-camera"></i><i class="fa-solid fa-chevron-down"></i></a>
-                                    <div id="<%= collapseId %>" class="collapse">
-                                        <hr />
-                                        <div class="row text-center text-lg-start thumbnails-row">
-                                            <% project.images.forEach((image) => { %>
-                                            <div class="my-thumbnail-anchor-wrapper">
-                                                <a href="#" class="d-block ma-6 h-100 my-thumbnail-anchor" data-bs-toggle="modal" data-bs-target="#imageModal">
-                                                    <img class="img-fluid img-thumbnail my-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
-                                                </a>
-                                            </div>
+                <div class="col-0 col-md-1"></div>
+                <div class="col-12 col-md-10">
+                    <div class="row">
+                        <% personalProjects.forEach((project, i) => { %>
+                            <div class="col-12 col-md-6 bottom-margin-15">
+                                <div class="card project-card">
+                                    <div class="card-header">
+                                        <div>
+                                            <span class="project-name"><%= project.projectName %></span>
+                                            <% project.iconLinks.forEach((iconLink) => { %>
+                                                <a class="<%= iconLink.buttonClasses %>" href="<%= iconLink.link %>"
+                                                   target="_blank" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                   title="<%= iconLink.tooltip %>"><i class="<%= iconLink.fontAwesomeClasses %>"></i></a>
                                             <% }); %>
                                         </div>
                                     </div>
-                                <% } %>
+                                    <div class="card-body">
+                                        <div class="project-summary"><span><%- project.summary %></span></div>
+
+                                        <% project.skillsUsed.forEach((skill) => { %>
+                                            <span class="badge <%= skillColorMap[skill] %>"><%= skill %></span>
+                                        <% }); %>
+
+                                        <% if (project.images.length > 0) { %>
+                                            <% const collapseId = `collapse${i}`; %>
+                                            <span>|</span>
+                                            <a data-bs-toggle="collapse" data-bs-target="#<%= collapseId %>"><i class="fa-solid fa-camera"></i><i class="fa-solid fa-chevron-down"></i></a>
+                                            <div id="<%= collapseId %>" class="collapse">
+                                                <hr />
+                                                <div class="row text-center text-lg-start thumbnails-row">
+                                                    <% project.images.forEach((image) => { %>
+                                                    <div class="my-thumbnail-anchor-wrapper">
+                                                        <a href="#" class="d-block ma-6 h-100 my-thumbnail-anchor" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                                            <img class="img-fluid img-thumbnail my-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
+                                                        </a>
+                                                    </div>
+                                                    <% }); %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        <% }); %>
                     </div>
-                <% }); %>
+                </div>
+                <div class="col-0 col-md-1"></div>
             </div>
+
         </div>
-        <div class="col-0 col-md-0 col-lg-2"></div>
+        <div class="col-2"></div>
     </div>
 
     <div id="imageModal" class="modal">
