@@ -3,7 +3,7 @@ import constants from '../helpers/constants';
 import readingService from '../services/reading/reading-service';
 
 function getReadingLogView(request: Request, response: Response) {
-  response.render('reading-log', {
+  response.render('reading/reading-log', {
     urls: constants.urls,
     nav: {
       ...constants.defaultNavOptions,
@@ -14,7 +14,7 @@ function getReadingLogView(request: Request, response: Response) {
 }
 
 function getReadingStatsView(request: Request, response: Response) {
-  response.render('reading-stats', {
+  response.render('reading/reading-stats', {
     urls: constants.urls,
     nav: {
       ...constants.defaultNavOptions,
@@ -25,7 +25,7 @@ function getReadingStatsView(request: Request, response: Response) {
 }
 
 function getSeriesStatsView(request: Request, response: Response) {
-  response.render('reading-series', {
+  response.render('reading/reading-series', {
     urls: constants.urls,
     nav: {
       ...constants.defaultNavOptions,
