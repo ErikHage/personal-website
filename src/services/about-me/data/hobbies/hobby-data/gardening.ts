@@ -9,6 +9,10 @@ const data: Hobby = {
   links: [],
   images: [
     {
+      imagePath: '/images/hobbies/gardening/old-garden.jpg',
+      caption: 'Old Garden at Parents\' House',
+    },
+    {
       imagePath: '/images/hobbies/gardening/new-garden-beds.jpg',
       caption: 'New House Garden Beds Year 1',
     },
