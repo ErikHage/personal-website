@@ -2307,6 +2307,14 @@ const data: BookRecord[] = [
     installment: 14,
     author: 'David Weber',
     start: new Date('5/5/24'),
+    finish: new Date('5/31/24'),
+  },
+  {
+    title: 'To End In Fire',
+    series: 'Honorverse: Crown of Slaves',
+    installment: 4,
+    author: 'David Weber, Eric Flint, et al.',
+    start: new Date('6/1/24'),
   },
 ]
 
