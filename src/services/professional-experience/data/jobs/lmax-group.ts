@@ -52,6 +52,19 @@ const data: WorkData = {
         'allows makers to reject matches or execute a trade.',
       skillsUsed: [ 'Java', ],
     },
+    {
+      title: 'Ethereum Custody',
+      summary: 'Adding support for Ethereum custody. Required spinning up an Ethereum node, writing a monitor ' +
+        'to watch for contract creation and transactions in tracked addresses. Initially support Eth native and ' +
+        'ERC20 tokens.',
+      skillsUsed: [ 'Java', 'MySQL', ],
+    },
+    {
+      title: 'Algo Orders - TWAP',
+      summary: 'Time Weighted Average Price spreads an order out into a number of smaller orders over a ' +
+        'given time period.',
+      skillsUsed: [ 'Java', ],
+    },
   ],
 };
 
