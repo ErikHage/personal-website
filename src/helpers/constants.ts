@@ -3,7 +3,7 @@ import { NavOptions } from '../handlers/types';
 const urls = {
   GITHUB: 'https://github.com/ErikHage',
   LINKED_IN: 'https://www.linkedin.com/in/erik-hage-9553a642/',
-  RECIPE_APP: 'https://theferalrooster.com/recipes',
+  VORACIOUS_APPETITE: 'https://theferalrooster.com/recipes',
   TIC_TAC_TOE_APP: 'https://theferalrooster.com/apps/tic-tac-toe',
 };
 
