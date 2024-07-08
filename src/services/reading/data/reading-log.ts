@@ -2315,6 +2315,14 @@ const data: BookRecord[] = [
     installment: 4,
     author: 'David Weber, Eric Flint, et al.',
     start: new Date('6/1/24'),
+    finish: new Date('7/7/24'),
+  },
+  {
+    title: 'A Fire Upon the Deep',
+    series: 'Zones of Thought',
+    installment: 1,
+    author: 'Vernor Vinge',
+    start: new Date('7/7/24'),
   },
 ]
 
