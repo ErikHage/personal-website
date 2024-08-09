@@ -2323,7 +2323,15 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Vernor Vinge',
     start: new Date('7/7/24'),
+    finish: new Date('8/8/24'),
   },
-]
+  {
+    title: 'A Deepness in the Sky',
+    series: 'Zones of Thought',
+    installment: 2,
+    author: 'Vernor Vinge',
+    start: new Date('8/8/24'),
+  },
+];
 
 export default data;
