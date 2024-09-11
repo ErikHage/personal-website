@@ -2333,6 +2333,13 @@ const data: BookRecord[] = [
     start: new Date('8/8/24'),
     finish: new Date('9/10/24'),
   },
+  {
+    title: 'The Children of the Sky',
+    series: 'Zones of Thought',
+    installment: 3,
+    author: 'Vernor Vinge',
+    start: new Date('9/11/24'),
+  },
 ];
 
 export default data;
