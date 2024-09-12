@@ -6,6 +6,7 @@ import personalWebsite from './data/personal-website';
 import ticTacToeApp from './data/tic-tac-toe-app';
 import feralAuthentication from './data/feral-authentication';
 import voraciousAppetite from './data/voracious-appetite';
+import vigilantHarvest from './data/vigilant-harvest';
 
 function getPersonalProjects(): Project[] {
   return [
@@ -15,6 +16,7 @@ function getPersonalProjects(): Project[] {
     voraciousAppetite,
     ticTacToeApp,
     feralAuthentication,
+    vigilantHarvest,
   ];
 }
 
