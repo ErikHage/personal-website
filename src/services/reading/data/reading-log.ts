@@ -2339,6 +2339,7 @@ const data: BookRecord[] = [
     installment: 3,
     author: 'Vernor Vinge',
     start: new Date('9/11/24'),
+    finish: new Date('10/5/24'),
   },
 ];
 
