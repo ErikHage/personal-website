@@ -2341,6 +2341,13 @@ const data: BookRecord[] = [
     start: new Date('9/11/24'),
     finish: new Date('10/5/24'),
   },
+  {
+    title: 'Foundation',
+    series: 'Foundation Trilogy',
+    installment: 1,
+    author: 'Isaac Asimov',
+    start: new Date('10/6/24'),
+  },
 ];
 
 export default data;
