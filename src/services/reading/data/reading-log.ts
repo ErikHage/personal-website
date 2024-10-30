@@ -2347,6 +2347,7 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Isaac Asimov',
     start: new Date('10/6/24'),
+    finish: new Date('10/29/24'),
   },
 ];
 
