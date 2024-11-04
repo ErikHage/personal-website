@@ -2349,6 +2349,13 @@ const data: BookRecord[] = [
     start: new Date('10/6/24'),
     finish: new Date('10/29/24'),
   },
+  {
+    title: 'Coiling Dragon',
+    series: 'Coiling Dragon Saga',
+    installment: 1,
+    author: 'Wo Chi Xi Hong Shi',
+    start: new Date('11/3/24'),
+  },
 ];
 
 export default data;
