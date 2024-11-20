@@ -2357,6 +2357,13 @@ const data: BookRecord[] = [
     start: new Date('11/3/24'),
     finish: new Date('11/20/24'),
   },
+  {
+    title: 'To Your Scattered Bodies Go',
+    series: 'Riverworld Saga',
+    installment: 1,
+    author: 'Phillip Jose Farmer',
+    start: new Date('11/20/24'),
+  },
 ];
 
 export default data;
