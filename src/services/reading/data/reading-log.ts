@@ -2355,6 +2355,7 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Wo Chi Xi Hong Shi',
     start: new Date('11/3/24'),
+    finish: new Date('11/20/24'),
   },
 ];
 
