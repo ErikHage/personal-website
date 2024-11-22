@@ -65,6 +65,12 @@ const data: WorkData = {
         'given time period.',
       skillsUsed: [ 'Java', ],
     },
+    {
+      title: 'Vault Wallets',
+      summary: 'Adding vault wallets to the cryptocurrency custodian. Give the users the ability to balance ' +
+        'funds automatically between cold and vault wallets.',
+      skillsUsed: [ 'Java', ],
+    },
   ],
 };
 
