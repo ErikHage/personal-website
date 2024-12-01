@@ -2365,6 +2365,13 @@ const data: BookRecord[] = [
     start: new Date('11/20/24'),
     finish: new Date('12/1/24'),
   },
+  {
+    title: 'The Fabulous Riverboat',
+    series: 'Riverworld Saga',
+    installment: 2,
+    author: 'Phillip Jose Farmer',
+    start: new Date('12/2/24'),
+  },
 ];
 
 export default data;
