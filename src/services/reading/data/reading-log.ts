@@ -2373,6 +2373,13 @@ const data: BookRecord[] = [
     start: new Date('12/2/24'),
     finish: new Date('12/12/24'),
   },
+  {
+    title: 'Wind and Truth',
+    series: 'The Stormlight Archive',
+    installment: 5,
+    author: 'Brandon Sanderson',
+    start: new Date('12/2/24'),
+  },
 ];
 
 export default data;
