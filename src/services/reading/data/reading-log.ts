@@ -2379,6 +2379,14 @@ const data: BookRecord[] = [
     installment: 5,
     author: 'Brandon Sanderson',
     start: new Date('12/2/24'),
+    finish: new Date('1/21/25'),
+  },
+  {
+    title: 'The Dark Design',
+    series: 'Riverworld Saga',
+    installment: 3,
+    author: 'Phillip Jose Farmer',
+    start: new Date('1/21/25'),
   },
 ];
 
