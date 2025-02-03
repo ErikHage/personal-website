@@ -78,7 +78,7 @@ const data: WorkData = {
       skillsUsed: [ 'Java', 'VueJS', 'MySQL', ],
     },
     {
-      title: 'GRPC Interface Code Generation',
+      title: 'gRPC Interface Code Generation',
       summary: 'Make use of an annotation processor to generate gRPC services and clients for communication ' +
         'between backend services. The goal being to replace .proto files with compile time generation.',
       skillsUsed: [ 'Java', 'gRPC', ],
