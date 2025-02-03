@@ -73,7 +73,7 @@ const data: WorkData = {
     },
     {
       title: 'Cryptocurrency Wallets',
-      summary: 'Adding the concept of a group of address that can re-balance funds between addresses in' +
+      summary: 'Adding the concept of a group of address that can re-balance funds between addresses in ' +
         'the group, beholden to security policies.',
       skillsUsed: [ 'Java', 'VueJS', 'MySQL', ],
     },
