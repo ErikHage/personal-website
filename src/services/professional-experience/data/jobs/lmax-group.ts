@@ -68,8 +68,14 @@ const data: WorkData = {
     {
       title: 'Vault Security',
       summary: 'Adding addresses protected by vault level security policies to the cryptocurrency custodian. ' +
-        'Give the users the ability to balance funds between cold and vault wallets.',
-      skillsUsed: [ 'Java', ],
+        'Give the users the ability to balance funds between cold and vault addresses.',
+      skillsUsed: [ 'Java', 'VueJS', 'MySQL', ],
+    },
+    {
+      title: 'Cryptocurrency Wallets',
+      summary: 'Adding the concept of a group of address that can re-balance funds between addresses in' +
+        'the group, beholden to security policies.',
+      skillsUsed: [ 'Java', 'VueJS', 'MySQL', ],
     },
   ],
 };
