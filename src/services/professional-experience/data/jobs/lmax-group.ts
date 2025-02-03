@@ -80,7 +80,8 @@ const data: WorkData = {
     {
       title: 'gRPC Interface Code Generation',
       summary: 'Make use of an annotation processor to generate gRPC services and clients for communication ' +
-        'between backend services. The goal being to replace .proto files with compile time generation.',
+        'between backend services. The goal being to replace .proto files with compile time generation of ' +
+        'implementations.',
       skillsUsed: [ 'Java', 'gRPC', ],
     },
   ],
