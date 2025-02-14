@@ -2387,6 +2387,14 @@ const data: BookRecord[] = [
     installment: 3,
     author: 'Phillip Jose Farmer',
     start: new Date('1/21/25'),
+    finish: new Date('2/13/25'),
+  },
+  {
+    title: 'The Magic Labyrinth',
+    series: 'Riverworld Saga',
+    installment: 4,
+    author: 'Phillip Jose Farmer',
+    start: new Date('2/13/25'),
   },
 ];
 
