@@ -66,10 +66,23 @@ const data: WorkData = {
       skillsUsed: [ 'Java', ],
     },
     {
-      title: 'Vault Wallets',
-      summary: 'Adding vault wallets to the cryptocurrency custodian. Give the users the ability to balance ' +
-        'funds automatically between cold and vault wallets.',
-      skillsUsed: [ 'Java', ],
+      title: 'Vault Security',
+      summary: 'Adding addresses protected by vault level security policies to the cryptocurrency custodian. ' +
+        'Give the users the ability to balance funds between cold and vault addresses.',
+      skillsUsed: [ 'Java', 'VueJS', 'MySQL', ],
+    },
+    {
+      title: 'Cryptocurrency Wallets',
+      summary: 'Adding the concept of a group of address that can re-balance funds between addresses in ' +
+        'the group, beholden to security policies.',
+      skillsUsed: [ 'Java', 'VueJS', 'MySQL', ],
+    },
+    {
+      title: 'gRPC Interface Code Generation',
+      summary: 'Make use of an annotation processor to generate gRPC services and clients for communication ' +
+        'between backend services. The goal being to replace .proto files with compile time generation of ' +
+        'implementations.',
+      skillsUsed: [ 'Java', 'gRPC', ],
     },
   ],
 };
