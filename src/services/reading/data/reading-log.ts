@@ -2395,6 +2395,7 @@ const data: BookRecord[] = [
     installment: 4,
     author: 'Phillip Jose Farmer',
     start: new Date('2/13/25'),
+    finish: new Date('4/15/25'),
   },
 ];
 
