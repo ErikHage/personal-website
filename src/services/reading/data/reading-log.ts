@@ -2403,6 +2403,7 @@ const data: BookRecord[] = [
     installment: 5,
     author: 'Phillip Jose Farmer',
     start: new Date('4/15/25'),
+    finish: new Date('5/8/25'),
   },
 ];
 
