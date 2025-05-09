@@ -2405,6 +2405,13 @@ const data: BookRecord[] = [
     start: new Date('4/15/25'),
     finish: new Date('5/8/25'),
   },
+  {
+    title: 'Gardens of the Moon',
+    series: 'Malazan Book of the Fallen',
+    installment: 1,
+    author: 'Steven Erikson',
+    start: new Date('5/8/25'),
+  },
 ];
 
 export default data;
