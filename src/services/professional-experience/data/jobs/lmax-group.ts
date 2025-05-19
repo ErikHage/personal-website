@@ -90,6 +90,12 @@ const data: WorkData = {
         'Give the users the ability to balance funds between related (same wallet) addresses.',
       skillsUsed: [ 'Java', 'MySQL', 'VueJS', ],
     },
+    {
+      title: 'Cursor Based Pagination Framework',
+      summary: 'A full stack framework for cursor based pagination. Includes a custom vue component with ' +
+        'functionality for paging through cursored apis, and test helpers for verifying records across pages.',
+      skillsUsed: [ 'Java', 'MySQL', 'VueJS', ],
+    },
   ],
 };
 
