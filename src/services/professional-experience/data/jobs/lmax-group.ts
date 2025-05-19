@@ -84,6 +84,12 @@ const data: WorkData = {
         'implementations.',
       skillsUsed: [ 'Java', 'gRPC', ],
     },
+    {
+      title: 'Warm Security',
+      summary: 'Adding addresses protected by warm level security policies to the cryptocurrency custodian. ' +
+        'Give the users the ability to balance funds between related (same wallet) addresses.',
+      skillsUsed: [ 'Java', 'MySQL', 'VueJS', ],
+    },
   ],
 };
 
