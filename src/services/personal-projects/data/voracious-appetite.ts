@@ -4,7 +4,7 @@ const data: Project = {
   projectName: 'Voracious Appetite',
   summary: 'A web app built using Vue to display recipes. Recipes are stored as json files in a github ' +
     'repository, and cached by a backend service.',
-  skillsUsed: [ 'Vue', 'Vuetify', 'Pinia', 'HTML', 'CSS', 'NodeJS', 'Docker', 'Nginx', ],
+  skillsUsed: [ 'VueJS', 'Vuetify', 'Pinia', 'HTML', 'CSS', 'NodeJS', 'Docker', 'Nginx', ],
   iconLinks: [
     {
       link: 'http://theferalrooster.com/apps/voracious-appetite',
