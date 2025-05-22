@@ -37,6 +37,7 @@ const skillColorMap = {
   'Redux': blue,
   'Express': blue,
   'VueJS': blue,
+  'Vuetify': blue,
   'JUnit': blue,
   'Maven': blue,
   'gRPC': blue,
