@@ -2413,6 +2413,13 @@ const data: BookRecord[] = [
     start: new Date('5/8/25'),
     finish: new Date('7/17/25'),
   },
+  {
+    title: 'In the Shadow of Lightning',
+    series: 'Glass Immortals',
+    installment: 1,
+    author: 'Brian McClellan',
+    start: new Date('7/17/25'),
+  },
 ];
 
 export default data;
