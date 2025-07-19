@@ -2411,6 +2411,7 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Steven Erikson',
     start: new Date('5/8/25'),
+    finish: new Date('7/17/25'),
   },
 ];
 
