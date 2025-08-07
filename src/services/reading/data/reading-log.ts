@@ -2419,6 +2419,13 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Brian McClellan',
     start: new Date('7/17/25'),
+    finish: new Date('8/6/25'),
+  },
+  {
+    title: 'Isles of the Emberdark',
+    series: 'Cosmere',
+    author: 'Brandon Sanderson',
+    start: new Date('8/6/25'),
   },
 ];
 
