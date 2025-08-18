@@ -2426,6 +2426,12 @@ const data: BookRecord[] = [
     series: 'Cosmere',
     author: 'Brandon Sanderson',
     start: new Date('8/6/25'),
+    finish: new Date('8/17/25'),
+  },
+  {
+    title: 'The Spear Cuts Through Water',
+    author: 'Simon Jimenez',
+    start: new Date('8/18/25'),
   },
 ];
 
