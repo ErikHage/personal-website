@@ -2432,6 +2432,14 @@ const data: BookRecord[] = [
     title: 'The Spear Cuts Through Water',
     author: 'Simon Jimenez',
     start: new Date('8/18/25'),
+    finish: new Date('9/17/25'),
+  },
+  {
+    title: 'The Mercy of Gods',
+    series: 'Captive\'s War',
+    installment: 1,
+    author: 'James S.A. Corey',
+    start: new Date('9/17/25'),
   },
 ];
 
