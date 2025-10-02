@@ -2440,6 +2440,14 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'James S.A. Corey',
     start: new Date('9/17/25'),
+    finish: new Date('10/1/25'),
+  },
+  {
+    title: 'Gunmetal Gods',
+    series: 'Gunmetal Gods',
+    installment: 1,
+    author: 'Zamil Akhtar',
+    start: new Date('10/1/25'),
   },
 ];
 
