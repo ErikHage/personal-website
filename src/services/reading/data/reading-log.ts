@@ -2448,6 +2448,14 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Zamil Akhtar',
     start: new Date('10/1/25'),
+    finish: new Date('11/30/25'),
+  },
+  {
+    title: 'Dungeon Crawler Carl',
+    series: 'Dungeon Crawler Carl',
+    installment: 1,
+    author: 'Matt Dinniman',
+    start: new Date('12/2/25'),
   },
 ];
 
