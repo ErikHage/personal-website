@@ -2456,6 +2456,14 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Matt Dinniman',
     start: new Date('12/2/25'),
+    finish: new Date('12/4/25'),
+  },
+  {
+    title: 'Carl\'s Doomsday Scenario',
+    series: 'Dungeon Crawler Carl',
+    installment: 2,
+    author: 'Matt Dinniman',
+    start: new Date('12/4/25'),
   },
 ];
 
