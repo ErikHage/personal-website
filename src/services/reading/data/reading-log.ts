@@ -2464,6 +2464,14 @@ const data: BookRecord[] = [
     installment: 2,
     author: 'Matt Dinniman',
     start: new Date('12/4/25'),
+    finish: new Date('12/10/25'),
+  },
+  {
+    title: 'The Dungeon Anarchist\'s Cookbook',
+    series: 'Dungeon Crawler Carl',
+    installment: 3,
+    author: 'Matt Dinniman',
+    start: new Date('12/10/25'),
   },
 ];
 
