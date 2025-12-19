@@ -2472,6 +2472,14 @@ const data: BookRecord[] = [
     installment: 3,
     author: 'Matt Dinniman',
     start: new Date('12/10/25'),
+    finish: new Date('12/17/25'),
+  },
+  {
+    title: 'The Gate of the Feral Gods',
+    series: 'Dungeon Crawler Carl',
+    installment: 4,
+    author: 'Matt Dinniman',
+    start: new Date('12/18/25'),
   },
 ];
 
