@@ -2480,6 +2480,14 @@ const data: BookRecord[] = [
     installment: 4,
     author: 'Matt Dinniman',
     start: new Date('12/18/25'),
+    finish: new Date('1/5/26'),
+  },
+  {
+    title: 'The Butcher\'s Masquerade',
+    series: 'Dungeon Crawler Carl',
+    installment: 5,
+    author: 'Matt Dinniman',
+    start: new Date('1/5/26'),
   },
 ];
 
