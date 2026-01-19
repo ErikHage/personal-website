@@ -2488,6 +2488,14 @@ const data: BookRecord[] = [
     installment: 5,
     author: 'Matt Dinniman',
     start: new Date('1/5/26'),
+    finish: new Date('1/18/26'),
+  },
+  {
+    title: 'The Eye of the Bedlam Bride',
+    series: 'Dungeon Crawler Carl',
+    installment: 6,
+    author: 'Matt Dinniman',
+    start: new Date('1/18/26'),
   },
 ];
 
