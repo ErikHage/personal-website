@@ -2496,6 +2496,14 @@ const data: BookRecord[] = [
     installment: 6,
     author: 'Matt Dinniman',
     start: new Date('1/18/26'),
+    finish: new Date('2/4/26'),
+  },
+  {
+    title: 'This Inevitable Ruin',
+    series: 'Dungeon Crawler Carl',
+    installment: 7,
+    author: 'Matt Dinniman',
+    start: new Date('2/4/26'),
   },
 ];
 
