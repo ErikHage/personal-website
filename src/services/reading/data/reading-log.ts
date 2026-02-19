@@ -2504,6 +2504,12 @@ const data: BookRecord[] = [
     installment: 7,
     author: 'Matt Dinniman',
     start: new Date('2/4/26'),
+    finish: new Date('2/18/26'),
+  },
+  {
+    title: 'Project Hail Mary',
+    author: 'Andy Weir',
+    start: new Date('2/18/26'),
   },
 ];
 
