@@ -102,6 +102,12 @@ const data: WorkData = {
         'approvals for user actions.',
       skillsUsed: [ 'Java', 'MySQL', 'VueJS', ],
     },
+    {
+      title: 'Single Sig Blockchain Addresses',
+      summary: 'The initial implementation of addresses for custodian required multiple signatures to transfer funds. ' +
+        'This ended up more costly than the business expected, so we added support for single signature (hot) addresses.',
+      skillsUsed: [ 'Java', 'MySQL', 'VueJS', ],
+    },
   ],
 };
 
