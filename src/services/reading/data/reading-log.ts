@@ -2510,6 +2510,14 @@ const data: BookRecord[] = [
     title: 'Project Hail Mary',
     author: 'Andy Weir',
     start: new Date('2/18/26'),
+    finish: new Date('2/28/26'),
+  },
+  {
+    title: 'To Challenge Heaven',
+    series: 'Out of the Dark',
+    installment: 3,
+    author: 'David Weber',
+    start: new Date('2/28/26'),
   },
 ];
 
