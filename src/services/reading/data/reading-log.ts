@@ -2518,6 +2518,14 @@ const data: BookRecord[] = [
     installment: 3,
     author: 'David Weber',
     start: new Date('2/28/26'),
+    finish: new Date('3/5/26'),
+  },
+  {
+    title: 'Ancillary Justice',
+    series: 'Imperial Radch',
+    installment: 1,
+    author: 'Ann Leckie',
+    start: new Date('3/6/26'),
   },
 ];
 
