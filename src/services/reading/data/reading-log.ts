@@ -2526,6 +2526,12 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Ann Leckie',
     start: new Date('3/6/26'),
+    finish: new Date('3/31/26'),
+  },
+  {
+    title: 'Operation Bounce House',
+    author: 'Matt Dinniman',
+    start: new Date('3/31/26'),
   },
 ];
 
