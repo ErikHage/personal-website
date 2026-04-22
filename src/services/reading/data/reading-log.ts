@@ -2532,6 +2532,14 @@ const data: BookRecord[] = [
     title: 'Operation Bounce House',
     author: 'Matt Dinniman',
     start: new Date('3/31/26'),
+    finish: new Date('4/21/26'),
+  },
+  {
+    title: 'The Faith of Beasts',
+    series: 'Captive\'s War',
+    installment: 2,
+    author: 'James S.A. Corey',
+    start: new Date('4/21/26'),
   },
 ];
 
