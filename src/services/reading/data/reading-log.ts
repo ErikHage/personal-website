@@ -2540,6 +2540,7 @@ const data: BookRecord[] = [
     installment: 2,
     author: 'James S.A. Corey',
     start: new Date('4/21/26'),
+    finish: new Date('5/6/26'),
   },
 ];
 
