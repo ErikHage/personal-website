@@ -2542,6 +2542,13 @@ const data: BookRecord[] = [
     start: new Date('4/21/26'),
     finish: new Date('5/6/26'),
   },
+  {
+    title: 'A Parade of Horribles',
+    series: 'Dungeon Crawler Carl',
+    installment: 8,
+    author: 'Matt Dinniman',
+    start: new Date('5/11/26'),
+  },
 ];
 
 export default data;
