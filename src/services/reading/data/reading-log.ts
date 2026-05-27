@@ -2548,6 +2548,7 @@ const data: BookRecord[] = [
     installment: 8,
     author: 'Matt Dinniman',
     start: new Date('5/11/26'),
+    finish: new Date('5/25/26'),
   },
 ];
 
