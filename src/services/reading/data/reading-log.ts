@@ -2550,6 +2550,13 @@ const data: BookRecord[] = [
     start: new Date('5/11/26'),
     finish: new Date('5/25/26'),
   },
+  {
+    title: 'The Lost Metal',
+    series: 'Mistborn Era 2',
+    installment: 4,
+    author: 'Brandon Sanderson',
+    start: new Date('6/2/26'),
+  },
 ];
 
 export default data;
