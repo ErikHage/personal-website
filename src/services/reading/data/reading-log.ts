@@ -2556,6 +2556,14 @@ const data: BookRecord[] = [
     installment: 4,
     author: 'Brandon Sanderson',
     start: new Date('6/2/26'),
+    finish: new Date('7/7/26'),
+  },
+  {
+    title: 'Songs of the Dead',
+    series: 'The Strata War',
+    installment: 1,
+    author: 'Brandon Sanderson and Peter Orullian',
+    start: new Date('7/7/26'),
   },
 ];
 
