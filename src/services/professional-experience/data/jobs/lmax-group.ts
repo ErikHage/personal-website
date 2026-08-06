@@ -108,6 +108,19 @@ const data: WorkData = {
         'This ended up more costly than the business expected, so we added support for single signature (hot) addresses.',
       skillsUsed: [ 'Java', 'MySQL', 'VueJS', ],
     },
+    {
+      title: 'Blockchain Staking',
+      summary: 'Built out the functionality for ops to stake funds on a blockchain. This allows the staked funds to accrue ' +
+        'resources that can be used to reduce or eliminate the cost of blockchain transactions.',
+      skillsUsed: [ 'Java', 'MySQL', 'VueJS', ],
+    },
+    {
+      title: 'Tron Blockchain Delegation',
+      summary: 'Built out the functionality for ops to delegate accrued resources from staked funds on the Tron blockchain. ' +
+        'This allows for addresses used for staking funds to delegate their resources to other addresses in real time. One ' +
+        'use case is for automatic sweeping of funds off of HOT addresses and into COLD addresses for increased security.',
+      skillsUsed: [ 'Java', 'MySQL', 'VueJS', ],
+    },
   ],
 };
 
