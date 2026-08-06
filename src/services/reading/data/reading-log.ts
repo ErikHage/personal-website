@@ -2564,6 +2564,14 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Brandon Sanderson and Peter Orullian',
     start: new Date('7/7/26'),
+    finish: new Date('8/5/26'),
+  },
+  {
+    title: 'The Amulet of Samarkand',
+    series: 'Bartimaeus',
+    installment: 1,
+    author: 'Jonathan Stroud',
+    start: new Date('8/5/26'),
   },
 ];
 
