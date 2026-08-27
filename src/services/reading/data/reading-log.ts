@@ -2572,6 +2572,14 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Jonathan Stroud',
     start: new Date('8/5/26'),
+    finish: new Date('8/25/26'),
+  },
+  {
+    title: 'The Golem\'s Eye',
+    series: 'Bartimaeus',
+    installment: 2,
+    author: 'Jonathan Stroud',
+    start: new Date('8/26/26'),
   },
 ];
 
