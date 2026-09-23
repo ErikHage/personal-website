@@ -2580,6 +2580,14 @@ const data: BookRecord[] = [
     installment: 2,
     author: 'Jonathan Stroud',
     start: new Date('8/26/26'),
+    finish: new Date('9/22/26'),
+  },
+  {
+    title: 'Ptolemy\'s Gate',
+    series: 'Bartimaeus',
+    installment: 3,
+    author: 'Jonathan Stroud',
+    start: new Date('9/22/26'),
   },
 ];
 
