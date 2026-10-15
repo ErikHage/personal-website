@@ -2588,6 +2588,14 @@ const data: BookRecord[] = [
     installment: 3,
     author: 'Jonathan Stroud',
     start: new Date('9/22/26'),
+    finish: new Date('10/14/26'),
+  },
+  {
+    title: 'Blightfall',
+    series: 'Riftwake',
+    installment: 1,
+    author: 'Brandon Sanderson and Janci Patterson',
+    start: new Date('10/14/26'),
   },
 ];
 
