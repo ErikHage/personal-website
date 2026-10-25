@@ -2596,6 +2596,14 @@ const data: BookRecord[] = [
     installment: 1,
     author: 'Brandon Sanderson and Janci Patterson',
     start: new Date('10/14/26'),
+    finish: new Date('10/24/26'),
+  },
+  {
+    title: 'The Ring of Solomon',
+    series: 'Bartimaeus',
+    installment: 0.5,
+    author: 'Jonathan Stroud',
+    start: new Date('10/25/26'),
   },
 ];
 
