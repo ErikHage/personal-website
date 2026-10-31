@@ -15,8 +15,7 @@ RUN npm install --loglevel info
 COPY tsconfig.json ./tsconfig.json
 COPY src ./src
 COPY tools ./tools
-COPY .eslintrc ./.eslintrc
-COPY .eslintignore ./.eslintignore
+COPY eslint.config.mjs ./eslint.config.mjs
 
 RUN npm run build
 
