@@ -11,16 +11,19 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 |---|---|---|
 | 0 | Set up the branch and this document | Done |
 | 1 | Tests and pre-push hook | Done |
-| 2 | Runtime and deployment | Committed; Docker Hub build not yet confirmed |
-| 3 | App fixes | Not started |
+| 2 | Runtime and deployment | Done |
+| 3 | App fixes | Done |
+| 3.5 | Move tests to `test/unit` | Not started |
 | 4 | Templates, mobile and accessibility | Not started |
 | 5 | Images | Not started |
 | 6 | Toolchain | Not started |
 | 7 | Finish | Not started |
 
-**Next action:** The user tests the Docker build. Once it passes, mark Phase 2 done, record the result
-in the dependency changelog, and start Phase 3 when the user says to. Check `USER node` and stop
-signals on the first real run, and that the server has Docker Compose 1.27 or newer.
+**Next action:** Phase 3.5.
+
+**Check at first deploy:** the Docker build passed, but the image hasn't been confirmed running. Check
+that it serves pages as `USER node`, reports `healthy`, stops promptly, and that the server has
+Docker Compose 1.27 or newer.
 
 **Decisions and notes made during the work:** add anything here that changes this plan or that the
 next session needs to know.
@@ -128,7 +131,7 @@ Production sits behind Cloudflare. On 2026-10-31 the live site served Brotli, wi
 `/professional-experience`, `/personal-projects`, `/red-white-and-brew`, `/reading/log`,
 `/reading/stats` and `/reading/series`. Remove the worktree afterwards. Compare the current branch
 the same way, using `diff -r --strip-trailing-cr`: a fresh checkout has CRLF templates where the
-working tree may have LF, and otherwise every line appears to differ. Output should be unchanged through Phase 3. After that, every difference must be an
+working tree may have LF, and otherwise every line appears to differ. Output should be unchanged through Phase 3.5. After that, every difference must be an
 intended one, and Phase 6 should match the end of Phase 5 exactly.
 
 **Browser measurement.** With the `playwright-skill`, load each route at viewport widths 390 and 1440.
@@ -149,7 +152,7 @@ width, and image bytes on load for `/about-me`.
 
 ### Phase 1: Tests and pre-push hook
 
-- Add `npm test`: `node:test` files in `src/**/*.test.ts`, compiled by `tsc` and run from `dist/`.
+- Add `npm test`: `node:test` files in `test/unit/` (moved there in Phase 3.5), compiled by `tsc` and run from `dist/`.
 - Smoke test all 8 routes through `getApp` (`src/app.ts`) on an ephemeral port.
 - Check the structure only: each page renders with its title, and its internal links, stylesheets and
   scripts resolve. Nothing tests the contents of the data files (see the note under Status).
@@ -192,9 +195,21 @@ Hub build passes. Write the `HEALTHCHECK` with `node` rather than `curl`, which 
 **Done when:** `/nope` shows the styled 404 locally, all 8 routes match the baseline, and no CSP
 reports appear in the console.
 
+### Phase 3.5: Move tests to `test/unit`
+
+The user doesn't want tests living beside the code they test.
+
+- Move `src/app.test.ts` to `test/unit/app.test.ts`, and fix its imports and `appRoot`.
+- Point `npm test` at `dist/test/`.
+- Remove the `.dockerignore` rule for test files. The Dockerfile never copies `test/`.
+
+**Done when:** all tests pass from the new location, HTML matches the baseline, and rebuilding the
+Docker stages by hand leaves no tests in `dist`.
+
 ### Phase 4: Templates, mobile and accessibility
 
-- Add `partials/_head.ejs` taking a title, description and page assets, and use it in all 8 pages.
+- Add `partials/_head.ejs` taking a title, description and page assets, and use it in all 8 pages
+  and `error.ejs`.
   It adds `charset`, `initial-scale=1`, description and Open Graph tags, and moves Bootstrap to 5.3.8
   with SRI hashes.
 - Mobile: replace the `col-2 / col-8 / col-2` wrapper with `col-12 col-lg-8 offset-lg-2`, and wrap the
@@ -243,7 +258,9 @@ build passes.
   - `/nope`: if the styled 404 doesn't appear, nginx or Cloudflare is answering it. That config isn't
     in this repo, so record it as a loose end.
   - Security headers are present and `X-Powered-By` is gone.
-  - Review CSP reports, then switch to enforcing as a separate change.
+  - Open each live page and read the browser console. The CSP has no reporting endpoint, so
+    violations appear only there. Add any host Cloudflare needs, then switch to enforcing as a
+    separate change.
 
 **Done when:** the branch is merged, the plan document is gone, and any production findings are
 recorded in `ai-changelogs`.

@@ -1,19 +1,37 @@
 import express, { Express } from 'express';
+import helmet from 'helmet';
 import path from 'path';
 import favicon from 'serve-favicon';
 
+import errorHandlers from './handlers/error-handlers';
 import buildViewRouter from './routes/view-router';
 
-const getApp = (appRoot: string, port: string): Express => {
+const getApp = (appRoot: string): Express => {
   const app: Express = express();
 
-  app.set('port', port);
+  app.set('view engine', 'ejs');
+  app.set('views', path.join(appRoot, '../templates'));
 
+  app.use(helmet({
+    // Cloudflare terminates TLS, so HSTS belongs there.
+    strictTransportSecurity: false,
+    // Report-only until production has been checked: Cloudflare can inject its own scripts.
+    contentSecurityPolicy: {
+      reportOnly: true,
+      directives: {
+        scriptSrc: [ "'self'", 'https://cdn.jsdelivr.net', 'https://kit.fontawesome.com', ],
+        connectSrc: [ "'self'", 'https://ka-f.fontawesome.com', ],
+        upgradeInsecureRequests: null,
+      },
+    },
+  }));
   app.use(favicon(path.join(appRoot, '../../public/images', 'favicon.ico')));
-  app.use(express.urlencoded({ extended: false, }));
   app.use(express.static(path.join(appRoot, '../../public')));
 
-  app.use('/', buildViewRouter(appRoot));
+  app.use('/', buildViewRouter());
+
+  app.use(errorHandlers.getNotFoundView);
+  app.use(errorHandlers.handleServerError);
 
   return app;
 }

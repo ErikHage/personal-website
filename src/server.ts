@@ -1,11 +1,12 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
 import http from 'http';
-import path from "path";
+import path from 'path';
 
 import getApp from './app';
 
-const onError = (port: string) => (error: any) => {
+const onError = (port: string) => (error: NodeJS.ErrnoException) => {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -36,7 +37,7 @@ const initApp = () => {
   console.log(`trying to start app on port ${port}`);
   console.log(`app root is ${appRoot}`);
 
-  const app = getApp(appRoot, port);
+  const app = getApp(appRoot);
 
   http.createServer(app)
     .listen(port)

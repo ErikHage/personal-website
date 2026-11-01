@@ -1,5 +1,4 @@
-import Router, { Express } from 'express';
-import path from 'path';
+import { Router } from 'express';
 
 import indexHandlers from '../handlers/index-handlers';
 import readingHandlers from '../handlers/reading-handlers';
@@ -8,11 +7,8 @@ import professionalExperienceHandlers from '../handlers/professional-experience-
 import personalProjectsHandlers from '../handlers/personal-projects-handlers';
 import redWhiteAndBrewHandlers from '../handlers/red-white-and-brew-handlers';
 
-const router: Express = Router();
-
-const buildViewRouter = (appRoot: string): Express => {
-  router.set('view engine', 'ejs');
-  router.set('views', path.join(appRoot, '../templates'));
+const buildViewRouter = (): Router => {
+  const router = Router();
 
   router.get('/', indexHandlers.getIndexView);
 

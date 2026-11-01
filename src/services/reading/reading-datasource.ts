@@ -19,7 +19,7 @@ function sortLogDescending(a: BookRecord, b: BookRecord): number {
 }
 
 function getReadingLog(): BookRecord[] {
-  return readingLog.sort(sortLogDescending)
+  return [ ...readingLog, ].sort(sortLogDescending);
 }
 
 function getReadingStats(): ReadingStats {

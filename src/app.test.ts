@@ -5,6 +5,7 @@ import path from 'node:path';
 import { after, before, test } from 'node:test';
 
 import getApp from './app';
+import personalProjectsService from './services/personal-projects/personal-projects-service';
 
 const pages = [
   { route: '/', title: 'Erik Hage', },
@@ -27,7 +28,7 @@ function getLocalUrls(html: string): string[] {
 }
 
 before(async () => {
-  server = http.createServer(getApp(path.resolve(__dirname), '0'));
+  server = http.createServer(getApp(path.resolve(__dirname)));
   await new Promise<void>((resolve) => server.listen(0, resolve));
   baseUrl = `http://localhost:${(server.address() as AddressInfo).port}`;
 });
@@ -56,8 +57,41 @@ for (const { route, title, } of pages) {
   });
 }
 
-test('an unknown route returns 404', async () => {
+test('an unknown route shows the 404 page', async () => {
   const response = await fetch(`${baseUrl}/no-such-page`);
+  const html = await response.text();
 
   assert.equal(response.status, 404);
+  assert.ok(html.includes('<title>Erik Hage: Page Not Found</title>'));
+  assert.ok(html.includes('class="navbar'), 'expected the site navigation');
+});
+
+test('a failing route shows the 500 page without exposing the error', async (context) => {
+  const logged = context.mock.method(console, 'error', () => undefined);
+  context.mock.method(personalProjectsService, 'getRandomProject', () => {
+    throw new Error('secret failure detail');
+  });
+
+  const response = await fetch(`${baseUrl}/`);
+  const html = await response.text();
+
+  assert.equal(response.status, 500);
+  assert.ok(html.includes('<title>Erik Hage: Something Went Wrong</title>'));
+  assert.ok(html.includes('class="navbar'), 'expected the site navigation');
+  assert.ok(!html.includes('secret failure detail'), 'the error message reached the page');
+  assert.ok(!html.includes('index-handlers'), 'a stack trace reached the page');
+  assert.equal(logged.mock.callCount(), 1);
+});
+
+test('responses carry the security headers', async () => {
+  const { headers, } = await fetch(`${baseUrl}/`);
+  const { headers: assetHeaders, } = await fetch(`${baseUrl}/stylesheets/main.css`);
+
+  for (const responseHeaders of [ headers, assetHeaders, ]) {
+    assert.equal(responseHeaders.get('x-powered-by'), null);
+    assert.equal(responseHeaders.get('x-content-type-options'), 'nosniff');
+    assert.equal(responseHeaders.get('strict-transport-security'), null);
+    assert.equal(responseHeaders.get('content-security-policy'), null);
+    assert.ok(responseHeaders.has('content-security-policy-report-only'));
+  }
 });

@@ -25,7 +25,7 @@ const kebabCaseFilename = {
 
 export default tseslint.config(
   {
-    ignores: [ 'dist/', 'public/', 'src/server.ts', '**/*.js', '**/*.mjs', '**/*.cjs' ],
+    ignores: [ 'dist/', 'public/', '**/*.js', '**/*.mjs', '**/*.cjs' ],
   },
   {
     files: [ '**/*.ts' ],
