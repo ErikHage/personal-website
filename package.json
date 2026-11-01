@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "My personal website",
   "author": "Erik Hage",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "clean": "ts-node tools/clean",
     "tsc": "tsc",
@@ -10,14 +13,13 @@
     "copy-assets": "ts-node tools/copy-assets",
     "postbuild": "",
     "dev:start": "npm run build && npm start",
-    "start": "node ./dist/src/server.js",
+    "start": "node --env-file-if-exists=.env ./dist/src/server.js",
     "lint": "eslint .",
     "test": "npm run build && node --test \"dist/src/**/*.test.js\"",
     "dev": "nodemon --watch src --watch public/stylesheets -e ts,ejs --exec npm run dev:start",
     "prepare": "git config core.hooksPath .githooks || exit 0"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
     "ejs": "^7.0.2",
     "express": "^4.22.3",
     "serve-favicon": "^2.5.0"
@@ -25,7 +27,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/express": "^4.17.17",
-    "@types/node": "^18.16.2",
+    "@types/node": "^24.19.2",
     "@types/serve-favicon": "^2.5.4",
     "@types/shelljs": "^0.10.0",
     "eslint": "^10.14.0",

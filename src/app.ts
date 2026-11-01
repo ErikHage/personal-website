@@ -1,13 +1,10 @@
 import express, { Express } from 'express';
-import dotenv from 'dotenv';
 import path from 'path';
 import favicon from 'serve-favicon';
 
 import buildViewRouter from './routes/view-router';
 
 const getApp = (appRoot: string, port: string): Express => {
-  dotenv.config();
-
   const app: Express = express();
 
   app.set('port', port);

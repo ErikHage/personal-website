@@ -11,14 +11,16 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 |---|---|---|
 | 0 | Set up the branch and this document | Done |
 | 1 | Tests and pre-push hook | Done |
-| 2 | Runtime and deployment | Not started |
+| 2 | Runtime and deployment | Committed; Docker Hub build not yet confirmed |
 | 3 | App fixes | Not started |
 | 4 | Templates, mobile and accessibility | Not started |
 | 5 | Images | Not started |
 | 6 | Toolchain | Not started |
 | 7 | Finish | Not started |
 
-**Next action:** Phase 2, once the user says to start. The user is updating git first.
+**Next action:** The user tests the Docker build. Once it passes, mark Phase 2 done, record the result
+in the dependency changelog, and start Phase 3 when the user says to. Check `USER node` and stop
+signals on the first real run, and that the server has Docker Compose 1.27 or newer.
 
 **Decisions and notes made during the work:** add anything here that changes this plan or that the
 next session needs to know.
@@ -125,7 +127,8 @@ Production sits behind Cloudflare. On 2026-10-31 the live site served Brotli, wi
 (the homepage picks a random project), and save the HTML for `/`, `/about-me`,
 `/professional-experience`, `/personal-projects`, `/red-white-and-brew`, `/reading/log`,
 `/reading/stats` and `/reading/series`. Remove the worktree afterwards. Compare the current branch
-the same way. Output should be unchanged through Phase 3. After that, every difference must be an
+the same way, using `diff -r --strip-trailing-cr`: a fresh checkout has CRLF templates where the
+working tree may have LF, and otherwise every line appears to differ. Output should be unchanged through Phase 3. After that, every difference must be an
 intended one, and Phase 6 should match the end of Phase 5 exactly.
 
 **Browser measurement.** With the `playwright-skill`, load each route at viewport widths 390 and 1440.
