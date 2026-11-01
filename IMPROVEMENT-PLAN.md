@@ -14,12 +14,12 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 | 2 | Runtime and deployment | Done |
 | 3 | App fixes | Done |
 | 3.5 | Move tests to `test/unit` | Done |
-| 4 | Templates, mobile and accessibility | Not started |
+| 4 | Templates, mobile and accessibility | Done |
 | 5 | Images | Not started |
 | 6 | Toolchain | Not started |
 | 7 | Finish | Not started |
 
-**Next action:** Phase 4 is in progress.
+**Next action:** Phase 5, once the user says to start.
 
 **Check at first deploy:** the Docker build passed, but the image hasn't been confirmed running. Check
 that it serves pages as `USER node`, reports `healthy`, stops promptly, and that the server has
@@ -220,8 +220,7 @@ Docker stages by hand leaves no tests in `dist`.
 - Show the current year in the footer. Add `public/robots.txt` and `public/sitemap.xml`.
 - Remove the decommissioned-website paragraph and its preceding `<br/>` from
   `src/templates/red-white-and-brew.ejs`. The closure history above it stays.
-- Keep the TCNJ PDF link for now: it timed out twice, which could be temporary. Recheck it here and
-  ask the user if it's still failing.
+- Recheck the TCNJ PDF link. It timed out three times, so the user had it removed.
 
 **Done when:** no route scrolls horizontally at 390 wide, desktop screenshots look unchanged apart
 from intended changes, and the console is clean.

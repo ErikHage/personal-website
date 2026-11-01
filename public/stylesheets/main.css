@@ -50,3 +50,17 @@ footer {
 .navbar-nav > li > .dropdown-menu {
   background-color: #212529;
 }
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--bs-body-color);
+  --bs-table-striped-color: var(--bs-body-color);
+  --bs-table-hover-color: var(--bs-body-color);
+}
+
+.gallery-toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+}

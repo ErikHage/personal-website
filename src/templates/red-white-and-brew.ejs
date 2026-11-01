@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width"/>
-
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/main.css">
-    <link rel="stylesheet" href="/stylesheets/red-white-and-brew.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/97921a8cee.js" crossorigin="anonymous"></script>
-
-    <title>Erik Hage: RW&B</title>
-</head>
+<%- include('./partials/_head', {
+    title: 'Erik Hage: RW&B',
+    pagePath: '/red-white-and-brew',
+    stylesheet: 'red-white-and-brew',
+    description: 'The Red White & Brew Beer Company, a production microbrewery serving Camden and Gloucester counties from 2016 to 2025.',
+}); %>
 <body>
 
 <%- include('./partials/_nav'); %>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8 content-pane">
+        <div class="col-12 col-lg-8 offset-lg-2 content-pane">
 
             <div class="page-title text-center">
-                <h2>Red White & Brew Beer Company</h2>
+                <h1 class="h2">Red White & Brew Beer Company</h1>
             </div>
 
             <div class="row">
@@ -44,11 +36,6 @@
                                 connoisseurs until February 2025. The demands of the business got to be too much to
                                 manage with full time jobs and families, so we regretfully closed our doors.
                             </span>
-                            <br/>
-                            <span class="rwbbc-intro-paragraph">
-                               Our website is still live for now, with our farewell message and a link to our facebook page.
-                                <br/><a href="https://rwabbc.com" target="_blank">rwabbc.com</a>
-                            </span>
                         </div>
                     </div>
                 </div>
@@ -67,7 +54,7 @@
                                 const indicatorClasses = i === 0 ? 'active' : '';
                             %>
                             <button type="button" class="<%= indicatorClasses ;%>" data-bs-target="#rwbCarousel"
-                                    data-bs-slide-to="<%= i ;%>"></button>
+                                    data-bs-slide-to="<%= i ;%>" aria-label="Slide <%= i + 1 ;%>"></button>
                             <% }); %>
                         </div>
 
@@ -87,10 +74,12 @@
 
                         <!-- Left and right controls/icons -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#rwbCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#rwbCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
@@ -98,7 +87,6 @@
             </div>
 
         </div>
-        <div class="col-2"></div>
     </div>
 
     <%- include('./partials/_footer'); %>

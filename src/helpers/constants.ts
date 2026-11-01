@@ -1,6 +1,7 @@
 import { NavOptions } from '../handlers/types';
 
 const urls = {
+  SITE: 'https://theferalrooster.com',
   GITHUB: 'https://github.com/ErikHage',
   LINKED_IN: 'https://www.linkedin.com/in/erik-hage-9553a642/',
   VORACIOUS_APPETITE: 'https://theferalrooster.com/apps/voracious-appetite',

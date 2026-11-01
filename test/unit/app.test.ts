@@ -12,7 +12,7 @@ const pages = [
   { route: '/about-me', title: 'Erik Hage: About Me', },
   { route: '/professional-experience', title: 'Erik Hage: Professional Experience', },
   { route: '/personal-projects', title: 'Erik Hage: Personal Projects', },
-  { route: '/red-white-and-brew', title: 'Erik Hage: RW&B', },
+  { route: '/red-white-and-brew', title: 'Erik Hage: RW&amp;B', },
   { route: '/reading/log', title: 'Erik Hage: Reading Log', },
   { route: '/reading/stats', title: 'Erik Hage: Reading Stats', },
   { route: '/reading/series', title: 'Erik Hage: Reading Series', },
@@ -46,6 +46,11 @@ for (const { route, title, } of pages) {
     assert.equal(response.status, 200);
     assert.match(response.headers.get('content-type') ?? '', /^text\/html/);
     assert.ok(html.includes(`<title>${title}</title>`), `expected the title "${title}"`);
+    assert.ok(html.includes('<meta charset="utf-8"/>'), 'expected a charset');
+    assert.ok(html.includes('<meta name="description"'), 'expected a description');
+    assert.ok(html.includes(`<meta property="og:url" content="https://theferalrooster.com${route}"/>`));
+    assert.equal(html.match(/<h1[ >]/g)?.length, 1, 'expected exactly one h1');
+    assert.ok(html.includes(`&copy; ${new Date().getFullYear()} TheFeralRooster`), 'expected the current year');
 
     const localUrls = new Set(getLocalUrls(html));
     assert.ok(localUrls.size > 0, 'expected the page to reference local URLs');
@@ -81,6 +86,17 @@ test('a failing route shows the 500 page without exposing the error', async (con
   assert.ok(!html.includes('secret failure detail'), 'the error message reached the page');
   assert.ok(!html.includes('index-handlers'), 'a stack trace reached the page');
   assert.equal(logged.mock.callCount(), 1);
+});
+
+test('robots.txt points at a sitemap of every page', async () => {
+  const robots = await fetch(`${baseUrl}/robots.txt`);
+  const sitemap = await fetch(`${baseUrl}/sitemap.xml`);
+  const sitemapUrls = Array.from((await sitemap.text()).matchAll(/<loc>(.*?)<\/loc>/g), (match) => match[1]);
+
+  assert.equal(robots.status, 200);
+  assert.match(await robots.text(), /^Sitemap: https:\/\/theferalrooster\.com\/sitemap\.xml$/m);
+  assert.equal(sitemap.status, 200);
+  assert.deepEqual(sitemapUrls, pages.map(({ route, }) => `https://theferalrooster.com${route}`));
 });
 
 test('responses carry the security headers', async () => {
