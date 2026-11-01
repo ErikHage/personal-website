@@ -2,10 +2,12 @@
 
 Stuff about me
 
-### Run locally  
+### Run locally
+
+Requires Node 24 or newer.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -15,3 +17,10 @@ override with .env file:
 
 `PORT=XXXX`
 
+### Test
+
+```bash
+npm test
+```
+
+This lints, builds and runs `test/unit`. `npm ci` also sets up a pre-push hook that runs it.

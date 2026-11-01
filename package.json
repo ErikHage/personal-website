@@ -7,11 +7,10 @@
     "node": ">=24"
   },
   "scripts": {
-    "clean": "ts-node tools/clean",
+    "clean": "node tools/clean.mts",
     "tsc": "tsc",
     "build": "npm run clean && npm run lint && npm run tsc && npm run copy-assets",
-    "copy-assets": "ts-node tools/copy-assets",
-    "postbuild": "",
+    "copy-assets": "node tools/copy-assets.mts",
     "dev:start": "npm run build && npm start",
     "start": "node --env-file-if-exists=.env ./dist/src/server.js",
     "lint": "eslint .",
@@ -30,12 +29,9 @@
     "@types/express": "^4.17.17",
     "@types/node": "^24.19.2",
     "@types/serve-favicon": "^2.5.4",
-    "@types/shelljs": "^0.10.0",
     "eslint": "^10.14.0",
     "nodemon": "^3.1.0",
-    "shelljs": "^0.10.0",
-    "ts-node": "^10.9.1",
-    "typescript": "5.0.4",
+    "typescript": "~6.0.3",
     "typescript-eslint": "^8.72.1"
   },
   "overrides": {

@@ -16,10 +16,10 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 | 3.5 | Move tests to `test/unit` | Done |
 | 4 | Templates, mobile and accessibility | Done |
 | 5 | Images | Done |
-| 6 | Toolchain | Not started |
+| 6 | Toolchain | Done |
 | 7 | Finish | Not started |
 
-**Next action:** Phase 6 is in progress.
+**Next action:** Phase 7, once the user says to start.
 
 **Open decision for the user:** Phase 5 removed GPS data from six photos, but the originals remain in
 this public repo's git history and in older Docker images. Rewriting history would change every SHA,
@@ -245,7 +245,8 @@ and the modal preview still works.
   properly, without `ignoreDeprecations`. Raise `target` to `es2022`, and set `rootDir: "."` so the
   `dist/src` layout that `appRoot` relies on doesn't change.
 - Remove `ts-node` and `shelljs`. Rewrite `tools/clean.ts` and `tools/copy-assets.ts` with `node:fs` and
-  run them directly (Node 24 strips types natively).
+  run them directly (Node 24 strips types natively). They became `.mts`, because `.ts` printed a
+  module warning on every build and `"type": "module"` would break the CommonJS site in `dist`.
 - Remove the empty `postbuild` script.
 - Take the in-range `@types/express` and `serve-favicon` updates.
 - Update the README.

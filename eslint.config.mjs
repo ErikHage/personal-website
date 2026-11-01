@@ -28,7 +28,7 @@ export default tseslint.config(
     ignores: [ 'dist/', 'public/', '**/*.js', '**/*.mjs', '**/*.cjs' ],
   },
   {
-    files: [ '**/*.ts' ],
+    files: [ '**/*.ts', '**/*.mts' ],
     extends: [
       js.configs.recommended,
       ...tseslint.configs.recommended,
