@@ -15,11 +15,16 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 | 3 | App fixes | Done |
 | 3.5 | Move tests to `test/unit` | Done |
 | 4 | Templates, mobile and accessibility | Done |
-| 5 | Images | Not started |
+| 5 | Images | Done |
 | 6 | Toolchain | Not started |
 | 7 | Finish | Not started |
 
-**Next action:** Phase 5, once the user says to start.
+**Next action:** Phase 6 is in progress.
+
+**Open decision for the user:** Phase 5 removed GPS data from six photos, but the originals remain in
+this public repo's git history and in older Docker images. Rewriting history would change every SHA,
+including those in the changelogs. Ask again before the Phase 7 merge. Deploy soon after Phase 5,
+because the live site serves the old files until then.
 
 **Check at first deploy:** the Docker build passed, but the image hasn't been confirmed running. Check
 that it serves pages as `USER node`, reports `healthy`, stops promptly, and that the server has

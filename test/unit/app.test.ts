@@ -88,6 +88,16 @@ test('a failing route shows the 500 page without exposing the error', async (con
   assert.equal(logged.mock.callCount(), 1);
 });
 
+for (const route of [ '/about-me', '/personal-projects', ]) {
+  test(`${route} doesn't load gallery images until they're shown`, async () => {
+    const html = await (await fetch(`${baseUrl}${route}`)).text();
+    const thumbnails = html.match(/<img class="[^"]*img-thumbnail[^>]*>/g) ?? [];
+
+    assert.ok(thumbnails.length > 0, 'expected gallery thumbnails');
+    assert.ok(thumbnails.every((thumbnail) => thumbnail.includes('loading="lazy"')));
+  });
+}
+
 test('robots.txt points at a sitemap of every page', async () => {
   const robots = await fetch(`${baseUrl}/robots.txt`);
   const sitemap = await fetch(`${baseUrl}/sitemap.xml`);

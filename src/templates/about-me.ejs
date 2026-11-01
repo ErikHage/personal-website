@@ -155,7 +155,7 @@
                                                     <% hobby.images.forEach((image) => { %>
                                                         <div class="col-6 col-md-4 col-lg-2">
                                                             <a href="#" class="d-block mb-4 h-100" data-bs-toggle="modal" data-bs-target="#imageModal">
-                                                                <img class="img-fluid img-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
+                                                                <img class="img-fluid img-thumbnail" loading="lazy" src="<%= image.imagePath %>" alt="<%= image.caption %>">
                                                             </a>
                                                         </div>
                                                     <% }); %>

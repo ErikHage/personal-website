@@ -52,7 +52,7 @@
                                                     <% project.images.forEach((image) => { %>
                                                     <div class="my-thumbnail-anchor-wrapper">
                                                         <a href="#" class="d-block ma-6 h-100 my-thumbnail-anchor" data-bs-toggle="modal" data-bs-target="#imageModal">
-                                                            <img class="img-fluid img-thumbnail my-thumbnail" src="<%= image.imagePath %>" alt="<%= image.caption %>">
+                                                            <img class="img-fluid img-thumbnail my-thumbnail" loading="lazy" src="<%= image.imagePath %>" alt="<%= image.caption %>">
                                                         </a>
                                                     </div>
                                                     <% }); %>
