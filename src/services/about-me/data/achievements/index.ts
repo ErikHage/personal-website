@@ -13,7 +13,6 @@ const data: Achievement[] = [
   },
   {
     name: 'First place, IEEE Gold: Region 1 student paper and presentation competition (2009)',
-    description: '<a href="https://owd.tcnj.edu/~sphand/The%20PC-HAND%20Project/Project%20Resources_files/PCHAND_TCF2009_Publication_FINAL.pdf" target="_blank">Link to Paper</a>',
   },
   {
     name: 'Gender and breathing route modulate cardio-respiratory variability in humans',
