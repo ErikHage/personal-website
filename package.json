@@ -14,7 +14,8 @@
     "dev:start": "npm run build && npm start",
     "start": "node --env-file-if-exists=.env ./dist/src/server.js",
     "lint": "eslint .",
-    "test": "npm run build && node --test \"dist/test/**/*.test.js\"",
+    "check-images": "node tools/strip-image-metadata.mts --check",
+    "test": "npm run build && npm run check-images && node --test \"dist/test/**/*.test.js\"",
     "dev": "nodemon --watch src --watch public/stylesheets -e ts,ejs --exec npm run dev:start",
     "prepare": "git config core.hooksPath .githooks || exit 0"
   },

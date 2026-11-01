@@ -17,14 +17,16 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 | 4 | Templates, mobile and accessibility | Done |
 | 5 | Images | Done |
 | 6 | Toolchain | Done |
+| 6.5 | Keep metadata out of future images | Done |
 | 7 | Finish | Not started |
 
-**Next action:** Phase 7, once the user says to start.
+**Next action:** Phase 7 is in progress.
 
-**Open decision for the user:** Phase 5 removed GPS data from six photos, but the originals remain in
-this public repo's git history and in older Docker images. Rewriting history would change every SHA,
-including those in the changelogs. Ask again before the Phase 7 merge. Deploy soon after Phase 5,
-because the live site serves the old files until then.
+**Open vulnerability, deferred by the user:** the original photos, with GPS data for the user's home,
+remain in this public repo's git history. The user chose not to rewrite history for now, so Phase 7
+doesn't wait on it. `ai-changelogs` holds the details and the fix, in
+`projects/personal-website/2026-10-31-1-site-quality.md`. The live site serves the old files until
+the next deploy.
 
 **Check at first deploy:** the Docker build passed, but the image hasn't been confirmed running. Check
 that it serves pages as `USER node`, reports `healthy`, stops promptly, and that the server has
@@ -253,6 +255,20 @@ and the modal preview still works.
 
 **Done when:** a clean clone builds and tests pass, HTML matches the end of Phase 5, and the Docker Hub
 build passes.
+
+### Phase 6.5: Keep metadata out of future images
+
+- Add `tools/strip-image-metadata.mts`, using only Node. It strips JPEG and PNG metadata, keeps colour
+  profiles, and writes back a non-default orientation as a minimal EXIF segment.
+- `.githooks/pre-commit` cleans and re-stages images staged under `public/images`.
+- `npm test` runs `check-images`, so the pre-push hook blocks anything that skipped the commit hook.
+  It also fails on formats that can't be cleaned, such as HEIC.
+- Both hooks refuse images outside `public/images`, which is the only folder the check scans.
+- Clean every current image once, so the check starts from zero.
+- Record the history problem in `ai-changelogs` as an open vulnerability.
+
+**Done when:** a staged photo with GPS is committed without it, `--no-verify` is caught by the check,
+all images decode to the same pixels, and HTML matches the end of Phase 6.
 
 ### Phase 7: Finish
 

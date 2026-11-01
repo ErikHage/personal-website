@@ -23,4 +23,11 @@ override with .env file:
 npm test
 ```
 
-This lints, builds and runs `test/unit`. `npm ci` also sets up a pre-push hook that runs it.
+This lints, builds, checks images and runs `test/unit`. `npm ci` also sets up a pre-push hook that
+runs it.
+
+### Images
+
+Images belong in `public/images`, and must be JPEG or PNG. Photos can contain GPS coordinates, so
+`npm ci` sets up a pre-commit hook that removes metadata from staged images, and refuses images
+staged anywhere else.
