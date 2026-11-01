@@ -55,7 +55,11 @@ export default tseslint.config(
       'array-bracket-spacing': [ 'error', 'always' ],
       'object-curly-spacing': [ 'error', 'always' ],
       '@typescript-eslint/no-unnecessary-condition': 'error',
-      '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-floating-promises': [ 'error', {
+        allowForKnownSafeCalls: [
+          { from: 'package', name: [ 'test' ], package: 'node:test' },
+        ],
+      } ],
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/prefer-for-of': 'off',
       'no-shadow': 'off',

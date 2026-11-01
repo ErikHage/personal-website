@@ -10,7 +10,7 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 | Phase | Title | Status |
 |---|---|---|
 | 0 | Set up the branch and this document | Done |
-| 1 | Tests and CI | Not started |
+| 1 | Tests and pre-push hook | Done |
 | 2 | Runtime and deployment | Not started |
 | 3 | App fixes | Not started |
 | 4 | Templates, mobile and accessibility | Not started |
@@ -18,7 +18,7 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 | 6 | Toolchain | Not started |
 | 7 | Finish | Not started |
 
-**Next action:** Phase 1, once the user says to start.
+**Next action:** Phase 2, once the user says to start. The user is updating git first.
 
 **Decisions and notes made during the work:** add anything here that changes this plan or that the
 next session needs to know.
@@ -27,6 +27,12 @@ next session needs to know.
   Claude commits locally and says what is ready; the user pushes. Wherever this document says
   "pushed", the user does it.
 - Commit messages carry no AI co-author or tool trailers, also per `commit-messages`.
+- **Tests cover site structure, never data contents.** The user maintains `src/services/**/data/` by
+  hand, so nothing tests the reading log, skill colours or image paths. TypeScript covers the data's
+  shape. In all phases, ask about data that looks odd rather than changing it.
+- **No GitHub Actions.** The user chose a pre-push hook instead. `.githooks/pre-push` runs `npm test`,
+  and `prepare` sets `core.hooksPath` on each `npm ci`. `prepare` must keep working where git is
+  missing, because the Docker build runs it too.
 
 ## How to work on this
 
@@ -93,6 +99,9 @@ Production sits behind Cloudflare. On 2026-10-31 the live site served Brotli, wi
   85 ms in both modes). It's set in Phase 2 only for production error handling.
 - **Self-hosting Bootstrap or Font Awesome:** a CDN is fine for this site.
 - **TypeScript 7:** `typescript-eslint` requires `<6.1.0`.
+- **GitHub Actions:** the pre-push hook runs the tests instead.
+- **Dependabot:** without CI its PRs would arrive untested and skip the hook. Vulnerability alerts
+  need no file in the repo, and `npm outdated` covers the rest.
 
 ### Environment notes
 
@@ -101,6 +110,9 @@ Production sits behind Cloudflare. On 2026-10-31 the live site served Brotli, wi
   after a push.
 - `curl` in Git Bash failed certificate checks there (`000` for every URL). That was curl's CA
   bundle, not dead sites. Use Node `fetch` for network checks, and don't disable TLS verification.
+- Git on the original machine was 2.22, which has no `git hook run`. To test the hook without pushing,
+  run the file from `git rev-parse --git-path hooks/pre-push` with `sh`. Git for Windows can't be
+  upgraded from inside a session started in Git Bash; the user does that with those shells closed.
 - Machine-local scratch files don't carry over between machines, so anything needed later must be
   recreated or committed. The baseline below is designed for that.
 
@@ -132,17 +144,16 @@ width, and image bytes on load for `/about-me`.
 
 **Done when:** the branch is committed with this document, and Status is updated.
 
-### Phase 1: Tests and CI
+### Phase 1: Tests and pre-push hook
 
 - Add `npm test`: `node:test` files in `src/**/*.test.ts`, compiled by `tsc` and run from `dist/`.
 - Smoke test all 8 routes through `getApp` (`src/app.ts`) on an ephemeral port.
-- Data checks: every image path in the data exists on disk, every skill is in
-  `src/helpers/skill-color-map.ts` (the types only say `string[]`), and reading log dates are ordered.
-- Add `.github/workflows/ci.yml` (`npm ci`, build, test, `npm audit --omit=dev`).
-- Add grouped weekly Dependabot updates.
-- Check that `.github/` and the test files stay out of the Docker image's runtime stage.
+- Check the structure only: each page renders with its title, and its internal links, stylesheets and
+  scripts resolve. Nothing tests the contents of the data files (see the note under Status).
+- Add a versioned `.githooks/pre-push` that runs `npm test`, enabled by a `prepare` script.
+- Check that the test files stay out of the Docker image's runtime stage.
 
-**Done when:** tests pass locally and in CI, and a deliberately broken route fails them.
+**Done when:** tests pass locally, and a deliberately broken route fails them and blocks the hook.
 
 ### Phase 2: Runtime and deployment
 
@@ -213,7 +224,7 @@ and the modal preview still works.
   `dist/src` layout that `appRoot` relies on doesn't change.
 - Remove `ts-node` and `shelljs`. Rewrite `tools/clean.ts` and `tools/copy-assets.ts` with `node:fs` and
   run them directly (Node 24 strips types natively).
-- Remove the empty `postbuild` script and the `prepush` script, which no hook calls.
+- Remove the empty `postbuild` script.
 - Take the in-range `@types/express` and `serve-favicon` updates.
 - Update the README.
 
