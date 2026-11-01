@@ -13,13 +13,13 @@ Update this table in every phase-ending commit. It is the source of truth for wh
 | 1 | Tests and pre-push hook | Done |
 | 2 | Runtime and deployment | Done |
 | 3 | App fixes | Done |
-| 3.5 | Move tests to `test/unit` | Not started |
+| 3.5 | Move tests to `test/unit` | Done |
 | 4 | Templates, mobile and accessibility | Not started |
 | 5 | Images | Not started |
 | 6 | Toolchain | Not started |
 | 7 | Finish | Not started |
 
-**Next action:** Phase 3.5.
+**Next action:** Phase 4 is in progress.
 
 **Check at first deploy:** the Docker build passed, but the image hasn't been confirmed running. Check
 that it serves pages as `USER node`, reports `healthy`, stops promptly, and that the server has

@@ -4,8 +4,8 @@ import { AddressInfo } from 'node:net';
 import path from 'node:path';
 import { after, before, test } from 'node:test';
 
-import getApp from './app';
-import personalProjectsService from './services/personal-projects/personal-projects-service';
+import getApp from '../../src/app';
+import personalProjectsService from '../../src/services/personal-projects/personal-projects-service';
 
 const pages = [
   { route: '/', title: 'Erik Hage', },
@@ -28,7 +28,7 @@ function getLocalUrls(html: string): string[] {
 }
 
 before(async () => {
-  server = http.createServer(getApp(path.resolve(__dirname)));
+  server = http.createServer(getApp(path.resolve(__dirname, '../../src')));
   await new Promise<void>((resolve) => server.listen(0, resolve));
   baseUrl = `http://localhost:${(server.address() as AddressInfo).port}`;
 });

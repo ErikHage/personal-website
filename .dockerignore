@@ -2,6 +2,3 @@
 .env
 
 docker-compose.yml
-
-# not needed to build or run the site
-src/**/*.test.ts
