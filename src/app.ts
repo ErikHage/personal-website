@@ -19,7 +19,13 @@ const getApp = (appRoot: string): Express => {
     contentSecurityPolicy: {
       reportOnly: true,
       directives: {
-        scriptSrc: [ "'self'", 'https://cdn.jsdelivr.net', 'https://kit.fontawesome.com', ],
+        scriptSrc: [
+          "'self'",
+          'https://cdn.jsdelivr.net',
+          'https://kit.fontawesome.com',
+          // Cloudflare injects its analytics beacon into pages that browsers load.
+          'https://static.cloudflareinsights.com',
+        ],
         connectSrc: [ "'self'", 'https://ka-f.fontawesome.com', ],
         upgradeInsecureRequests: null,
       },
