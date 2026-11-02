@@ -39,10 +39,15 @@ const initApp = () => {
 
   const app = getApp(appRoot);
 
-  http.createServer(app)
+  const server = http.createServer(app)
     .listen(port)
     .on('error', onError(port))
     .on('listening', onListening(port));
+
+  // As PID 1 in Docker, node ignores these signals unless it handles them itself.
+  const shutDown = () => server.close(() => process.exit(0));
+  process.on('SIGTERM', shutDown);
+  process.on('SIGINT', shutDown);
 };
 
 initApp();
