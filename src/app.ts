@@ -15,9 +15,7 @@ const getApp = (appRoot: string): Express => {
   app.use(helmet({
     // Cloudflare terminates TLS, so HSTS belongs there.
     strictTransportSecurity: false,
-    // Report-only until production has been checked: Cloudflare can inject its own scripts.
     contentSecurityPolicy: {
-      reportOnly: true,
       directives: {
         scriptSrc: [
           "'self'",

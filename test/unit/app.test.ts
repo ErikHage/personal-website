@@ -117,7 +117,7 @@ test('responses carry the security headers', async () => {
     assert.equal(responseHeaders.get('x-powered-by'), null);
     assert.equal(responseHeaders.get('x-content-type-options'), 'nosniff');
     assert.equal(responseHeaders.get('strict-transport-security'), null);
-    assert.equal(responseHeaders.get('content-security-policy'), null);
-    assert.ok(responseHeaders.has('content-security-policy-report-only'));
+    assert.ok(responseHeaders.has('content-security-policy'));
+    assert.equal(responseHeaders.get('content-security-policy-report-only'), null);
   }
 });
