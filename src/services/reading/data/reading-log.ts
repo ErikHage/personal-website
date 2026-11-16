@@ -2604,6 +2604,13 @@ const data: BookRecord[] = [
     installment: 0.5,
     author: 'Jonathan Stroud',
     start: new Date('10/25/26'),
+    finish: new Date('11/14/26'),
+  },
+  {
+    title: 'The Fires of December',
+    series: 'Cosmere',
+    author: 'Brandon Sanderson',
+    start: new Date('11/17/26'),
   },
 ];
 
